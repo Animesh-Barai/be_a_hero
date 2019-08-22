@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">B-Hero</string>
+    <string name="slogan">Shopping on The Go</string>
+    <string name="company_copyright">Copyright &#169; Intelligent,%1$d </string>
+
+    <string name="about_text">E-Commerce application template with material design.
+    \n\nImage source :
+        \n<a href="www.facebook.com/ZaloraIndonesia">www.facebook.com/ZaloraIndonesia</a>
+    </string>
+
+    <!--string drawer menu-->
+    <string name="menu_cart">Cart</string>
+    <string name="menu_new">New Items</string>
+    <string name="menu_promotions">Promotions</string>
+
+    <string name="menu_clothing">Clothing</string>
+    <string name="menu_shoes">Shoes</string>
+    <string name="menu_watches">Watches</string>
+    <string name="menu_accessories">Accessories</string>
+    <string name="menu_bags">Bags</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!--exit notification-->
+    <string name="press_again_exit_app">Press again to exit</string>
+
+    <!--Activities-->
+    <string name="activity_login_register">Login/Register</string>
+    <string name="activity_login">Sign In</string>
+    <string name="activity_register">Sign Up</string>
+    <string name="activity_dashboard">Dashboard</string>
+    <string name="activity_case_list">Case List</string>
+    <string name="activity_profile">Profile</string>
+    <string name="activity_case_detail">Case Detail</string>
+    <string name="activity_business_line_detail">Business Detail</string>
+    <string name="activity_register_donor">Become Donor</string>
+
+    <string name="activity_verification">Verification</string>
+
+</resources>

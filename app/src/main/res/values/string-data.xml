@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+    \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+    <string name="short_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="middle_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+    <string name="long_lorem_ipsum">
+        Duis tellus metus, elementum a lectus id, aliquet interdum mauris. Nam bibendum efficitur sollicitudin. Proin eleifend libero velit, nec fringilla dolor finibus quis. nMorbi eu libero pellentesque, rutrum metus quis, blandit est. Fusce bibendum accumsan nisi vulputate feugiat. In fermentum laoreet euismod. Praesent sem nisl, facilisis eget odio at, rhoncus scelerisque ipsum. Nulla orci dui, dignissim a risus ut, lobortis porttitor velit.
+        \n\nNulla id lectus metus. Maecenas a lorem in odio auctor facilisis non vitae nunc. Sed malesuada volutpat massa. Praesent sit amet lacinia augue, mollis tempor dolor.
+    </string>
+
+    <!-- Strings related to login and registration -->
+    <string name="hint_email">Email</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_phone_email">Phone Number/Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_country">Country</string>
+    <string name="hint_city">City</string>
+    <string name="btn_login">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="have_no_account">Don\'t have an account?</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="btn_reset">Reset</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_username">Username must be 4-8 characters</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="err_msg_country">Enter the country</string>
+    <string name="err_msg_city">Enter the city</string>
+    <string name="inv_msg_password">Must be 4-10 characters long</string>
+    <string name="hint_name">Full Name</string>
+    <string name="btn_sign_up">REGISTER</string>
+    <string name="err_msg_name">Enter your full name</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="verification_caption">We will send you a one time message with your verification code.</string>
+    <string name="carrier_charges_caption">Local carrier charges may apply.</string>
+    <string name="sent_sms_code_caption">We have sent you an access code via SMS for verification.</string>
+    <string name="sent_sms_code_detect_caption">Waiting to automatically detect the access code sent to <b>%1$s</b>.</string>
+    <string name="wrong_number_caption"><u><b><font fgcolor='#FF0000FF'>Wrong Number ?</font></b></u></string>
+
+
+</resources>
