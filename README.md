@@ -10,7 +10,7 @@ The images below show the inspiration behind the concept app.
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](https://github.com/jeremy02/be_a_hero/blob/master/screenshot/Android%20Mobile%20%E2%80%93%201.jpg)  |  ![](https://github.com/jeremy02/be_a_hero/blob/master/screenshot/Android%20Mobile%20%E2%80%93%202.jpg)
+![](screenshot/Android Mobile – 1.jpg)  |  ![](screenshot-Android Mobile – 2.jpg)
 
 ## Design Details
 As exposed on the inspiration video, there's all the design details also present in this app.
