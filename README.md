@@ -8,9 +8,9 @@ The app was created to simulate all the system behind the UI kit in the link. Th
 ## The Inspiration
 The images below show the inspiration behind the concept app.
 
-<p align="center">
-  <img height="500" src="https://github.com/jeremy02/grocery_shop_concept/blob/master/screenshot/inspiration.gif">
-</p>
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://github.com/jeremy02/be_a_hero/blob/master/screenshot/Android%20Mobile%20%E2%80%93%201.jpg)  |  ![](https://github.com/jeremy02/be_a_hero/blob/master/screenshot/Android%20Mobile%20%E2%80%93%202.jpg)
 
 ## Design Details
 As exposed on the inspiration video, there's all the design details also present in this app.
