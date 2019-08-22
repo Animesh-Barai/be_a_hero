@@ -8,7 +8,7 @@ The app was created to simulate all the system behind the UI kit in the link. Th
 ## The Inspiration
 The images below show the inspiration behind the concept app.
 
-Solarized dark             |  Solarized Ocean             |  Solarized Ocean
+Splash Screen            |  Login/Register             |  OTP Screen
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](screenshot/mobile–1.jpg)  |  ![](screenshot/mobile–2.jpg)  |  ![](screenshot/mobile–3.jpg)
 
