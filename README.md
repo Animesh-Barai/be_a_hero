@@ -14,6 +14,9 @@ Splash Screen            |  Login/Register             |  OTP Screen
 
 ## Design Details
 As exposed on the inspiration video, there's all the design details also present in this app.
+Below is the whole process overview
+
+![](screenshot/mobile_overview.jpg.jpg)
 
 ## Notes
 Some extras have been added not present on previous design.
