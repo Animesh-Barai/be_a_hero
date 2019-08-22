@@ -2,6 +2,6 @@
 <resources>
 
     <style name="DrawerItemTextAppearance">
-        <item name="android:fontFamily">@font/futura_medium_bt</item>
+        <item name="android:fontFamily">@fonts/montserrat_medium</item>
     </style>
 </resources>

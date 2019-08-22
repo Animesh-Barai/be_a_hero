@@ -105,7 +105,7 @@
                     android:gravity="center"
                     android:textSize="16sp"
                     android:textColor="@color/finestTextColor"
-                    app:fontFamily="@font/futura_medium_bt"
+                    app:fontFamily="@fonts/montserrat_medium"
                     android:padding="@dimen/spacing_medium"
                     />
 
@@ -118,7 +118,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/finestTextColor"
-                    app:fontFamily="@font/futura_medium_bt"
+                    app:fontFamily="@fonts/montserrat_medium"
                     android:padding="@dimen/spacing_medium"
                     android:layout_marginTop="@dimen/spacing_medium"
                     />
@@ -130,7 +130,7 @@
                     android:gravity="center"
                     android:textSize="16sp"
                     android:textColor="@color/md_grey_600"
-                    app:fontFamily="@font/futura_medium_bt"
+                    app:fontFamily="@fonts/montserrat_medium"
                     android:padding="@dimen/spacing_medium"
                     android:layout_marginTop="@dimen/spacing_xlarge"
                     />
@@ -153,7 +153,7 @@
                         app:underlineStroke="5dp"
                         app:codeHiddenMode="false"
                         app:underlineCursorEnabled="false"
-                        app:fontFamily="@font/futura_heavy"
+                        app:fontFamily="@fonts/montserrat_bold"
                         app:textColor="@color/finestTextColor"
                         app:underlineReductionScale="0.2"
                         app:underlineBaseColor="@color/finestSilver"
@@ -178,7 +178,7 @@
                         android:textSize="16sp"
                         android:gravity="end|center_vertical"
                         android:textColor="@color/md_grey_600"
-                        app:fontFamily="@font/futura_light_bt"
+                        app:fontFamily="@fonts/montserrat_light"
                         android:paddingTop="@dimen/spacing_medium"
                         android:paddingBottom="@dimen/spacing_medium"
                         android:paddingStart="@dimen/spacing_medium"
@@ -192,12 +192,11 @@
                         android:textSize="16sp"
                         android:gravity="start|center_vertical"
                         android:textColor="@color/finestTextColor"
-                        app:fontFamily="@font/futura_light_bt"
+                        app:fontFamily="@fonts/montserrat_light"
                         android:paddingTop="@dimen/spacing_medium"
                         android:paddingBottom="@dimen/spacing_medium"
                         android:paddingEnd="@dimen/spacing_medium"
-                        android:paddingRight="@dimen/spacing_medium"
-                        />
+                        android:paddingRight="@dimen/spacing_medium" />
 
                 </LinearLayout>
 
@@ -247,7 +246,7 @@
                         android:text="Didn't get the code ?"
                         android:paddingRight="@dimen/spacing_medium"
                         android:paddingEnd="@dimen/spacing_medium"
-                        app:fontFamily="@font/futura_light_bt"
+                        app:fontFamily="@fonts/montserrat_light"
                         android:textColor="@color/md_grey_600"
                         android:textSize="16sp"
                         />
@@ -258,7 +257,7 @@
                         android:layout_height="wrap_content"
                         android:text="Resend Code"
                         android:textStyle="bold"
-                        app:fontFamily="@font/futura_heavy"
+                        app:fontFamily="@fonts/montserrat_bold"
                         android:textAllCaps="true"
                         android:textSize="16sp"
                         android:textColor="@color/colorAccent"

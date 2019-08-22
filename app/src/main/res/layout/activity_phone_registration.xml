@@ -28,7 +28,7 @@
             android:textStyle="bold"
             android:text="Verify Number"
             android:layout_below="@+id/toolbar"
-            app:fontFamily="@font/futura_medium_bt"
+            app:fontFamily="@fonts/montserrat_medium"
             android:textColor="@color/finestTextColor"
             android:layout_margin="@dimen/spacing_mlarge"
             />
@@ -48,7 +48,7 @@
                 android:gravity="center"
                 android:text="+1"
                 android:textSize="16sp"
-                app:fontFamily="@font/futura_medium_bt"
+                app:fontFamily="@fonts/montserrat_medium"
                 android:textColor="@color/finestTextColor"
                 android:padding="@dimen/spacing_large"
                 android:background="@drawable/circle_silver_no_stroke"
@@ -63,15 +63,14 @@
                 android:minHeight="?attr/actionBarSize"
                 android:hint="Enter your phone number"
                 android:inputType="phone|textPhonetic"
-                app:fontFamily="@font/futura_medium_bt"
+                app:fontFamily="@fonts/montserrat_medium"
                 android:paddingTop="@dimen/spacing_large"
                 android:paddingBottom="@dimen/spacing_large"
                 android:paddingLeft="@dimen/spacing_mxlarge"
                 android:paddingRight="@dimen/spacing_mxlarge"
                 android:layout_marginLeft="@dimen/spacing_medium"
                 android:layout_marginRight="@dimen/spacing_medium"
-                android:background="@drawable/rect_silver_background"
-                />
+                android:background="@drawable/rect_silver_background" />
 
         </LinearLayout>
 
@@ -93,7 +92,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:padding="@dimen/spacing_large"
-                app:fontFamily="@font/futura_medium_bt"
+                app:fontFamily="@fonts/montserrat_medium"
                 android:background="@drawable/rect_button_red_background"/>
 
         </com.be_a_hero.app.widget.MaterialRippleLayout>

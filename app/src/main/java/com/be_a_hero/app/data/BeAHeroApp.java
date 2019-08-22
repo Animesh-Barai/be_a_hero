@@ -34,7 +34,7 @@ public class BeAHeroApp extends MultiDexApplication {
         super.onCreate();
         mInstance = this;
         MultiDex.install(this);
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/futura_book.ttf");
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/montserrat_light.ttf");
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }

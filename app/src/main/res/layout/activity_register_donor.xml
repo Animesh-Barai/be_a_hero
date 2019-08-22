@@ -12,11 +12,11 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
             android:layout_alignParentTop="true"
             android:theme="@style/ArrowToolbarStyle"
             app:titleTextColor="@color/colorPrimary"
+            android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <TextView
@@ -25,12 +25,9 @@
                 android:gravity="start"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_below="@+id/toolbar"
-                app:fontFamily="@font/futura_heavy"
-                android:textColor="@color/finestTextColor"
-                android:paddingLeft="@dimen/spacing_large"
-                android:text="@string/activity_register_donor"
-                />
+                app:fontFamily="@fonts/montserrat_bold"
+                android:textColor="@color/be_hero_dark"
+                android:text="@string/activity_register_donor" />
 
         </android.support.v7.widget.Toolbar>
 
@@ -47,15 +44,13 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:hint="Name"
-                android:textSize="16sp"
                 android:inputType="text"
-                app:fontFamily="@font/futura_medium_bt"
-                android:paddingTop="@dimen/spacing_mxlarge"
+                app:fontFamily="@fonts/montserrat_regular"
+                android:paddingTop="@dimen/spacing_large"
                 android:paddingLeft="@dimen/spacing_xlarge"
                 android:paddingRight="@dimen/spacing_xlarge"
-                android:paddingBottom="@dimen/spacing_mxlarge"
-                android:background="@drawable/rect_silver_background"
-                />
+                android:paddingBottom="@dimen/spacing_large"
+                android:background="@drawable/rect_silver_background" />
 
             <EditText
                 android:id="@+id/input_email"
@@ -63,28 +58,27 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:hint="Email"
-                android:textSize="16sp"
                 android:inputType="textEmailAddress"
-                app:fontFamily="@font/futura_medium_bt"
-                android:paddingTop="@dimen/spacing_mxlarge"
+                app:fontFamily="@fonts/montserrat_regular"
+                android:paddingTop="@dimen/spacing_large"
                 android:paddingLeft="@dimen/spacing_xlarge"
                 android:paddingRight="@dimen/spacing_xlarge"
-                android:paddingBottom="@dimen/spacing_mxlarge"
+                android:paddingBottom="@dimen/spacing_large"
+                android:textColor="@color/be_hero_dark_grey"
                 android:layout_marginTop="@dimen/spacing_large"
-                android:background="@drawable/rect_silver_background"
-                />
+                android:background="@drawable/rect_silver_background" />
 
             <TextView
                 android:id="@+id/input_country_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Gender"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:padding="@dimen/spacing_large"
-                app:fontFamily="@font/futura_medium_bt"
-                android:textColor="@color/finestTextColor"
-                />
+                android:textColor="@color/be_hero_dark"
+                android:paddingTop="@dimen/spacing_large"
+                app:fontFamily="@fonts/montserrat_regular"
+                android:paddingBottom="@dimen/spacing_large" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -131,13 +125,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:text="Select Blood Group"
-                android:padding="@dimen/spacing_large"
-                app:fontFamily="@font/futura_medium_bt"
-                android:textColor="@color/finestTextColor"
-                />
+                android:textColor="@color/be_hero_dark"
+                android:paddingTop="@dimen/spacing_large"
+                app:fontFamily="@fonts/montserrat_regular"
+                android:paddingBottom="@dimen/spacing_large" />
 
             <RadioGroup
                 android:layout_width="wrap_content"
@@ -150,21 +144,28 @@
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
                     android:text="A+"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:padding="@dimen/spacing_large"
+                    app:fontFamily="@fonts/montserrat_regular"
                     android:button="@android:color/transparent"
-                    android:background="@drawable/radio_button_selector"/>
+                    android:background="@drawable/radio_button_selector"
+                    android:textColor="@drawable/radio_button_text_selector"/>
 
                 <RadioButton
                     android:id="@+id/radio1"
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
                     android:text="A-"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:padding="@dimen/spacing_large"
+                    app:fontFamily="@fonts/montserrat_regular"
                     android:button="@android:color/transparent"
                     android:layout_marginLeft="@dimen/spacing_large"
-                    android:background="@drawable/radio_button_selector"/>
+                    android:background="@drawable/radio_button_selector"
+                    android:textColor="@drawable/radio_button_text_selector"/>
 
             </RadioGroup>
 

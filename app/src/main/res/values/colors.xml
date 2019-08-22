@@ -2,13 +2,13 @@
 <resources>
     <!--<color name="colorPrimary">#BA0C2F</color>&lt;!&ndash;#EA1E63&ndash;&gt; &lt;!&ndash;#b72031&ndash;&gt;-->
     <!--<color name="colorPrimaryDark">#AF1236</color>-->
-    <color name="colorPrimary">#EA1E63</color><!--#EA1E63--> <!--#b72031-->
-    <color name="colorPrimaryDark">#b72031</color>
-    <color name="colorPrimaryLight">#ED4980</color>
+    <color name="colorPrimary">#FF217A</color><!--#EA1E63--> <!--#b72031-->
+    <color name="colorPrimaryDark">#FF4D4D</color>
+    <color name="colorPrimaryLight">#FF4E4E</color>
 
-    <color name="colorAccent">#c75972</color>
-    <color name="colorAccentDark">#D81A60</color>
-    <color name="colorAccentLight">#ED4980</color>
+    <color name="colorAccent">#FF217A</color>
+    <color name="colorAccentDark">#FF4D4D</color>
+    <color name="colorAccentLight">#FF4E4E</color>
     <color name="colorRed">#F44336</color>
 
     <color name="grey_hard">#96989A</color>
@@ -384,9 +384,10 @@
 
 
     <!--//Jubilee Colors-->
-    <color name="jubilee_grey">#5b6770</color>
-    <color name="theme_color">#BA0C2F</color>
-    <color name="transparent_theme_color">#08BA0C2F</color>
+    <color name="be_hero_dark">#0A0819</color>
+    <color name="be_hero_dark_grey">#A2A2A2</color>
+    <color name="be_hero_light_grey">#F6F6F6</color>
     <color name="transparent">#00000000</color>
+    <color name="theme_color">#BA0C2F</color>
 
 </resources>
