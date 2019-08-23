@@ -9,15 +9,15 @@ import android.os.Bundle;
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.databinding.ActivityLoginRegisterBinding;
 
-public class LoginRegisterActivity extends BaseActivity {
+public class ActivityRegister extends BaseActivity {
 
-    private static final String TAG = LoginRegisterActivity.class.getSimpleName();
+    private static final String TAG = ActivityRegister.class.getSimpleName();
 
     ActivityLoginRegisterBinding binding;
 
 
     public static void start(Context context) {
-        Intent intent = new Intent(context, LoginRegisterActivity.class);
+        Intent intent = new Intent(context, ActivityRegister.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         context.startActivity(intent);
     }

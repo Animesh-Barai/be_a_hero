@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="ContentDescription"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ContentDescription,HardcodedText">
 
     <RelativeLayout
-        android:id="@+id/layout_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:showIn="@layout/activity_welcome_screen">
@@ -17,13 +16,34 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_dots"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             app:tabBackground="@drawable/sliders_tab_selector"
-            android:layout_marginBottom="@dimen/spacing_mlarge"/>
+            android:layout_marginBottom="@dimen/spacing_middle"/>
+
+        <TextView
+            android:id="@+id/finish_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            app:fontFamily="@fonts/montserrat_light"
+            android:paddingRight="@dimen/spacing_large"
+            android:paddingTop="@dimen/spacing_mmiddle"
+            android:paddingLeft="@dimen/spacing_large"
+            android:paddingBottom="@dimen/spacing_mmiddle"
+            android:layout_marginBottom="@dimen/spacing_mlarge"
+            android:background="@drawable/rect_white_stroke_left_arc"/>
 
     </RelativeLayout>
 

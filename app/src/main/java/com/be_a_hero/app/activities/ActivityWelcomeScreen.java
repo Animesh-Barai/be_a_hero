@@ -5,24 +5,15 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.data.Tools;
-import com.be_a_hero.app.databinding.ActivitySplashBinding;
 import com.be_a_hero.app.databinding.ActivityWelcomeScreenBinding;
 
 public class ActivityWelcomeScreen extends BaseActivity {
@@ -46,13 +37,10 @@ public class ActivityWelcomeScreen extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         // Making notification bar transparent
-//        if (Build.VERSION.SDK_INT >= 21) {
-//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-//        }
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome_screen);
         parent_view = findViewById(android.R.id.content);
@@ -70,15 +58,21 @@ public class ActivityWelcomeScreen extends BaseActivity {
         binding.viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
         binding.tabDots.setupWithViewPager(binding.viewPager, true);
 
+        // go to the register activity
+        binding.finishTextView.setOnClickListener(v -> ActivityRegister.start(activityContext));
+
 //        Tools.systemBarLollipopTransparent(this);
     }
 
     //  viewpager change listener
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
         @Override
         public void onPageSelected(int position) {
-//            addBottomDots(position);
+            if(position >= layouts.length - 1){
+                binding.finishTextView.setVisibility(View.VISIBLE);
+            }else{
+                binding.finishTextView.setVisibility(View.GONE);
+            }
         }
 
         @Override

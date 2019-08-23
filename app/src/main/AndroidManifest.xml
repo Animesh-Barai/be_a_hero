@@ -40,11 +40,11 @@
         <activity
             android:name=".activities.ActivityWelcomeScreen"
             android:label="@string/activity_welcome_screen"
-            android:theme="@style/AppTheme.FullScreen"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity
-            android:name=".activities.LoginRegisterActivity"
+            android:name=".activities.ActivityRegister"
             android:label="@string/activity_login_register"
             android:windowSoftInputMode="stateHidden"/>
 
