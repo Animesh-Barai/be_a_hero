@@ -38,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onFinish() {
                 binding.loadingProgress.setVisibility(View.GONE);
                 // Start login activity
-                ActivityRegisterDonor.start(SplashActivity.this);
+                ActivityWelcomeScreen.start(SplashActivity.this);
                 // close splash activity
                 finish();
             }

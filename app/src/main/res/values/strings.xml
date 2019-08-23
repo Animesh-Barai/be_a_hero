@@ -27,6 +27,7 @@
     <string name="press_again_exit_app">Press again to exit</string>
 
     <!--Activities-->
+    <string name="activity_welcome_screen">Welcome Screen</string>
     <string name="activity_login_register">Login/Register</string>
     <string name="activity_login">Sign In</string>
     <string name="activity_register">Sign Up</string>
