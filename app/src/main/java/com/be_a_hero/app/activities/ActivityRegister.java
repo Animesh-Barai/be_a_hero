@@ -4,17 +4,18 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.databinding.ActivityLoginRegisterBinding;
+import com.be_a_hero.app.databinding.ActivityRegisterBinding;
 
 public class ActivityRegister extends BaseActivity {
 
     private static final String TAG = ActivityRegister.class.getSimpleName();
 
-    ActivityLoginRegisterBinding binding;
-
+    ActivityRegisterBinding binding;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, ActivityRegister.class);
@@ -26,6 +27,16 @@ public class ActivityRegister extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login_register);
+
+        // Making notification bar transparent
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
+
+        // init views
+        // go to the register activity
+        binding.mobilePhoneLayout.setOnClickListener(v -> ActivityPhoneRegistration.start(activityContext));
     }
 }

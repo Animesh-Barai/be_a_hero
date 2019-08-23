@@ -46,6 +46,7 @@
         <activity
             android:name=".activities.ActivityRegister"
             android:label="@string/activity_login_register"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity

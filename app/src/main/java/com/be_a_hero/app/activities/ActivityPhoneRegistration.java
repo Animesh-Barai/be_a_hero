@@ -54,7 +54,7 @@ public class ActivityPhoneRegistration extends BaseActivity {
             showConfirmVerificationDialog(activityContext);
         });
 
-        Tools.systemBarLollipopTransparent(this);
+//        Tools.systemBarLollipopTransparent(this);
     }
 
     // show the confirm verification dialog
