@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Finish"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:visibility="gone"
             android:textAllCaps="true"
             android:textColor="@color/white"
@@ -38,10 +39,10 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             app:fontFamily="@fonts/montserrat_light"
-            android:paddingRight="@dimen/spacing_large"
-            android:paddingTop="@dimen/spacing_mmiddle"
-            android:paddingLeft="@dimen/spacing_large"
-            android:paddingBottom="@dimen/spacing_mmiddle"
+            android:paddingTop="@dimen/spacing_middle"
+            android:paddingLeft="@dimen/spacing_mlarge"
+            android:paddingRight="@dimen/spacing_mlarge"
+            android:paddingBottom="@dimen/spacing_middle"
             android:layout_marginBottom="@dimen/spacing_mlarge"
             android:background="@drawable/rect_white_stroke_left_arc"/>
 

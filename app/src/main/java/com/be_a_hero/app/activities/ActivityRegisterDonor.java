@@ -5,9 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.data.Tools;
@@ -20,6 +24,10 @@ public class ActivityRegisterDonor extends BaseActivity {
     ActivityRegisterDonorBinding binding;
 
     private View parent_view;
+    boolean maleGenderPressed = false;
+    boolean femaleGenderPressed = false;
+
+    String selectedSex = null;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, ActivityRegisterDonor.class);
@@ -27,7 +35,7 @@ public class ActivityRegisterDonor extends BaseActivity {
         context.startActivity(intent);
     }
 
-    @SuppressLint({"CheckResult", "SetTextI18n"})
+    @SuppressLint({"CheckResult", "SetTextI18n", "ResourceAsColor"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +45,68 @@ public class ActivityRegisterDonor extends BaseActivity {
         initToolbar(binding.toolbar,true);
         setToolbarTitle(null);
 
-        Tools.systemBarLollipopTransparent(this);
+        // on click male gender
+        binding.genderMaleImageView.setOnClickListener(v -> {
+            // toggle button
+            toggleGenderButtonStates(true);
+        });
+
+        // on click female gender
+        binding.genderFemaleImageView.setOnClickListener(v -> {
+            // toggle button
+            toggleGenderButtonStates(false);
+        });
+
+//        Tools.systemBarLollipopTransparent(this);
     }
+
+    private void toggleGenderButtonStates(boolean isMale) {
+        if(isMale){
+            selectedSex = "male";
+            // set male views
+            binding.genderMaleImageView.setImageState(new int[] {android.R.attr.state_pressed},true);
+            binding.genderMaleImageView.setColorFilter(ContextCompat.getColor(activityContext, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.genderMaleTextView.setTextColor(ContextCompat.getColor(activityContext,R.color.be_hero_dark));
+
+            // reset female views
+            binding.genderFemaleImageView.setImageState(new int[] {-android.R.attr.state_pressed},true);
+            binding.genderFemaleImageView.setColorFilter(ContextCompat.getColor(activityContext, R.color.be_hero_dark_grey), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.genderFemaleTextView.setTextColor(ContextCompat.getColor(activityContext,R.color.be_hero_dark_grey));
+        }else{
+            selectedSex = "female";
+            // reset male views
+            binding.genderMaleImageView.setImageState(new int[] {-android.R.attr.state_pressed},true);
+            binding.genderMaleImageView.setColorFilter(ContextCompat.getColor(activityContext, R.color.be_hero_dark_grey), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.genderMaleTextView.setTextColor(ContextCompat.getColor(activityContext,R.color.be_hero_dark_grey));
+            // set female views
+            binding.genderFemaleImageView.setImageState(new int[] {android.R.attr.state_pressed},true);
+            binding.genderFemaleImageView.setColorFilter(ContextCompat.getColor(activityContext, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.genderFemaleTextView.setTextColor(ContextCompat.getColor(activityContext,R.color.be_hero_dark));
+        }
+
+        binding.bloodGroupRadio1.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked)
+                checkChanged(buttonView.getId());
+        });
+
+        binding.bloodGroupRadio2.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked)
+                checkChanged(buttonView.getId());
+        });
+    }
+
+    private void checkChanged(int id) {
+        binding.bloodGroupRadio1.setChecked(false);
+        binding.bloodGroupRadio2.setChecked(false);
+        switch (id){
+            case R.id.blood_group_radio_1:
+                binding.bloodGroupRadio1.setChecked(true);
+            case R.id.blood_group_radio_2:
+                binding.bloodGroupRadio2.setChecked(true);
+
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:ignore="MissingPrefix,Autofill,LabelFor,InefficientWeight,RtlSymmetry,SmallSp,UseCompoundDrawables,HardcodedText,RtlHardcoded,ObsoleteLayoutParam,NestedWeights,ContentDescription">
+    tools:ignore="MissingPrefix,Autofill,UselessParent,LabelFor,InefficientWeight,RtlSymmetry,SmallSp,UseCompoundDrawables,HardcodedText,RtlHardcoded,ObsoleteLayoutParam,NestedWeights,ContentDescription">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,14 +42,16 @@
                 android:id="@+id/input_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:hint="Name"
+                android:maxLines="1"
+                android:textSize="14sp"
                 android:inputType="text"
-                app:fontFamily="@fonts/montserrat_regular"
+                android:minHeight="?attr/actionBarSize"
+                app:fontFamily="@fonts/montserrat_medium"
                 android:paddingTop="@dimen/spacing_large"
-                android:paddingLeft="@dimen/spacing_xlarge"
-                android:paddingRight="@dimen/spacing_xlarge"
                 android:paddingBottom="@dimen/spacing_large"
+                android:paddingLeft="@dimen/spacing_mxlarge"
+                android:paddingRight="@dimen/spacing_mxlarge"
                 android:background="@drawable/rect_silver_background" />
 
             <EditText
@@ -58,7 +60,9 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:hint="Email"
+                android:textSize="14sp"
                 android:inputType="textEmailAddress"
+                android:minHeight="?attr/actionBarSize"
                 app:fontFamily="@fonts/montserrat_regular"
                 android:paddingTop="@dimen/spacing_large"
                 android:paddingLeft="@dimen/spacing_xlarge"
@@ -87,17 +91,35 @@
                 android:paddingTop="@dimen/spacing_mmiddle"
                 android:paddingBottom="@dimen/spacing_mmiddle">
 
-                <ImageView
-                    android:id="@+id/gender_male_imageview"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"
-                    android:tint="@color/finestSilver"
-                    android:padding="@dimen/spacing_mmiddle"
-                    app:srcCompat="@drawable/ic_male_avatar"
-                    android:layout_toLeftOf="@+id/gender_divider"
-                    android:background="@drawable/circle_silver_stroke"
-                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toLeftOf="@+id/gender_divider">
+
+                    <ImageView
+                        android:id="@+id/gender_male_image_view"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:scaleType="centerCrop"
+                        android:tint="@color/be_hero_dark_grey"
+                        android:padding="@dimen/spacing_mmiddle"
+                        app:srcCompat="@drawable/ic_male_avatar"
+                        android:background="@drawable/radio_button_selector" />
+
+                    <TextView
+                        android:id="@+id/gender_male_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        app:fontFamily="@fonts/montserrat_medium"
+                        android:textColor="@color/be_hero_dark_grey"
+                        android:layout_marginTop="@dimen/spacing_medium"/>
+
+                </LinearLayout>
 
                 <View
                     android:id="@+id/gender_divider"
@@ -108,17 +130,35 @@
                     android:layout_marginLeft="@dimen/spacing_large"
                     android:layout_marginRight="@dimen/spacing_large"/>
 
-                <ImageView
-                    android:id="@+id/gender_female_imageview"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"
-                    android:tint="@color/finestSilver"
-                    android:padding="@dimen/spacing_mmiddle"
-                    app:srcCompat="@drawable/ic_female_avatar"
-                    android:layout_toRightOf="@+id/gender_divider"
-                    android:background="@drawable/circle_silver_stroke"
-                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/gender_divider">
+
+                    <ImageView
+                        android:id="@+id/gender_female_image_view"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:scaleType="centerCrop"
+                        android:tint="@color/be_hero_dark_grey"
+                        android:padding="@dimen/spacing_mmiddle"
+                        app:srcCompat="@drawable/ic_female_avatar"
+                        android:background="@drawable/radio_button_selector" />
+
+                    <TextView
+                        android:id="@+id/gender_female_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        app:fontFamily="@fonts/montserrat_medium"
+                        android:textColor="@color/be_hero_dark_grey"
+                        android:layout_marginTop="@dimen/spacing_medium"/>
+
+                </LinearLayout>
 
             </RelativeLayout>
 
@@ -133,39 +173,210 @@
                 app:fontFamily="@fonts/montserrat_regular"
                 android:paddingBottom="@dimen/spacing_large" />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
+            <!--Radio Buttons-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_below="@+id/check_box_remember_me">
 
-                <RadioButton
-                    android:id="@+id/radio0"
-                    android:layout_width="?attr/actionBarSize"
-                    android:layout_height="?attr/actionBarSize"
-                    android:text="A+"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:padding="@dimen/spacing_large"
-                    app:fontFamily="@fonts/montserrat_regular"
-                    android:button="@android:color/transparent"
-                    android:background="@drawable/radio_button_selector"
-                    android:textColor="@drawable/radio_button_text_selector"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radio1"
-                    android:layout_width="?attr/actionBarSize"
-                    android:layout_height="?attr/actionBarSize"
-                    android:text="A-"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:padding="@dimen/spacing_large"
-                    app:fontFamily="@fonts/montserrat_regular"
-                    android:button="@android:color/transparent"
-                    android:layout_marginLeft="@dimen/spacing_large"
-                    android:background="@drawable/radio_button_selector"
-                    android:textColor="@drawable/radio_button_text_selector"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:id="@+id/blood_group_radio_1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:id="@+id/blood_group_radio_2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/spacing_mmiddle">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="A+"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:padding="@dimen/spacing_large"
+                            app:fontFamily="@fonts/montserrat_regular"
+                            android:button="@android:color/transparent"
+                            android:background="@drawable/radio_button_selector"
+                            android:textColor="@drawable/radio_button_text_selector"/>
+
+                    </RelativeLayout>
+
+                    <!--Create Empty Views to balance weight-->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
             </RadioGroup>
 
