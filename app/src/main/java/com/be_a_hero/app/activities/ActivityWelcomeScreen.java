@@ -64,13 +64,11 @@ public class ActivityWelcomeScreen extends BaseActivity {
                 R.layout.fragment_welcome_slide3
         };
 
-        // adding bottom dots
-        addBottomDots(0);
-
         // the viewpager
         introSliderPagerAdapter = new IntroSliderPagerAdapter();
         binding.viewPager.setAdapter(introSliderPagerAdapter);
         binding.viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+        binding.tabDots.setupWithViewPager(binding.viewPager, true);
 
         Tools.systemBarLollipopTransparent(this);
     }
@@ -80,7 +78,7 @@ public class ActivityWelcomeScreen extends BaseActivity {
 
         @Override
         public void onPageSelected(int position) {
-            addBottomDots(position);
+//            addBottomDots(position);
         }
 
         @Override
@@ -93,26 +91,6 @@ public class ActivityWelcomeScreen extends BaseActivity {
 
         }
     };
-
-    private void addBottomDots(int currentPage) {
-        bottomBars = new TextView[layouts.length];
-
-        int colorActive = ContextCompat.getColor(activityContext,R.color.white);
-        int colorInactive = ContextCompat.getColor(activityContext,R.color.white);
-
-        binding.dotsLayout.removeAllViews();
-        for (int i = 0; i < bottomBars.length; i++) {
-            bottomBars[i] = new TextView(this);
-            bottomBars[i].setTextSize(30);
-            bottomBars[i].setText(Html.fromHtml("&#8226;"));
-
-            bottomBars[i].setTextColor(colorInactive);
-            binding.dotsLayout.addView(bottomBars[i]);
-        }
-
-        if (bottomBars.length > 0)
-            bottomBars[currentPage].setTextColor(colorActive);
-    }
 
     /**
      * View pager adapter

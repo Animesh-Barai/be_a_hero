@@ -15,23 +15,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!--<LinearLayout-->
-            <!--android:id="@+id/dots_layout"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="@dimen/spacing_xlarge"-->
-            <!--android:gravity="center"-->
-            <!--android:orientation="horizontal"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_marginBottom="@dimen/spacing_mlarge"/>-->
-
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabDots"
+            android:id="@+id/tab_dots"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp"
             android:layout_alignParentBottom="true"
-            app:tabBackground="@drawable/sliders_tab_selector"/>
+            app:tabBackground="@drawable/sliders_tab_selector"
+            android:layout_marginBottom="@dimen/spacing_mlarge"/>
 
     </RelativeLayout>
 
