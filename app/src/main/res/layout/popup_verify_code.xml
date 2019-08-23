@@ -15,13 +15,12 @@
             android:id="@+id/input_country_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:textStyle="bold"
-            android:padding="@dimen/spacing_large"
-            app:fontFamily="@fonts/montserrat_medium"
+            android:textSize="16sp"
+            android:padding="@dimen/spacing_mmiddle"
             android:text="Confirm Verification Code"
             android:textColor="@color/finestTextColor"
-            />
+            app:fontFamily="@fonts/montserrat_medium" />
 
         <!--verification code edit texts-->
         <LinearLayout
@@ -31,8 +30,6 @@
             android:gravity="start|center"
             android:baselineAligned="false"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/spacing_mmiddle"
-            android:paddingBottom="@dimen/spacing_mmiddle"
             android:layout_below="@+id/button_phone_verify_ripple">
 
             <RelativeLayout
@@ -42,11 +39,12 @@
 
                 <EditText
                     android:id="@+id/edit_text_verif_code_1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:hint="7"
                     android:maxLines="1"
                     android:maxLength="1"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:inputType="number"
@@ -54,8 +52,7 @@
                     android:padding="@dimen/spacing_large"
                     android:layout_centerHorizontal="true"
                     app:fontFamily="@fonts/montserrat_medium"
-                    android:background="@drawable/round_edit_text_background"
-                    />
+                    android:background="@drawable/round_edit_text_background" />
 
             </RelativeLayout>
 
@@ -66,11 +63,11 @@
 
                 <EditText
                     android:id="@+id/edit_text_verif_code_2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:maxLines="1"
                     android:maxLength="1"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:inputType="number"
@@ -89,11 +86,11 @@
 
                 <EditText
                     android:id="@+id/edit_text_verif_code_3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:maxLines="1"
                     android:maxLength="1"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:inputType="number"
@@ -112,11 +109,11 @@
 
                 <EditText
                     android:id="@+id/edit_text_verif_code_4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:maxLines="1"
                     android:maxLength="1"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:inputType="number"
@@ -126,6 +123,7 @@
                     app:fontFamily="@fonts/montserrat_medium"
                     android:background="@drawable/round_edit_text_background"
                     />
+
             </RelativeLayout>
 
         </LinearLayout>
@@ -134,7 +132,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_middle">
+            android:layout_marginTop="@dimen/spacing_large">
 
             <com.be_a_hero.app.widget.MaterialRippleLayout
                 style="@style/RippleStyleWhite"
@@ -148,11 +146,11 @@
                     android:layout_height="wrap_content"
                     android:text="Re-send"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     android:layout_alignParentLeft="true"
                     android:padding="@dimen/spacing_large"
-                    app:fontFamily="@fonts/montserrat_medium"
                     android:textColor="@color/colorPrimary"
-                    />
+                    app:fontFamily="@fonts/montserrat_medium" />
 
             </com.be_a_hero.app.widget.MaterialRippleLayout>
 
@@ -168,10 +166,10 @@
                     android:layout_height="wrap_content"
                     android:text="OK"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     android:minWidth="120dp"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:padding="@dimen/spacing_large"
                     app:fontFamily="@fonts/montserrat_medium"
                     android:background="@drawable/rect_button_red_background"/>
 

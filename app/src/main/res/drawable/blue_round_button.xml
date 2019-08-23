@@ -5,6 +5,6 @@
     <solid android:color="@color/md_blue_900" />
 
     <corners
-        android:radius="@dimen/spacing_actionbar"/>
+        android:radius="@dimen/theme_corner_radius"/>
 
 </shape>

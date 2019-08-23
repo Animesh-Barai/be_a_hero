@@ -9,6 +9,6 @@
         android:color="@color/be_hero_dark_grey"/>
 
     <corners
-        android:radius="@dimen/spacing_actionbar"/>
+        android:radius="@dimen/theme_corner_radius"/>
 
 </shape>
