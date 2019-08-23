@@ -50,9 +50,9 @@ public class ActivityWelcomeScreen extends BaseActivity {
 //        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Making notification bar transparent
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+//        }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome_screen);
         parent_view = findViewById(android.R.id.content);
@@ -70,7 +70,7 @@ public class ActivityWelcomeScreen extends BaseActivity {
         binding.viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
         binding.tabDots.setupWithViewPager(binding.viewPager, true);
 
-        Tools.systemBarLollipopTransparent(this);
+//        Tools.systemBarLollipopTransparent(this);
     }
 
     //  viewpager change listener
