@@ -19,8 +19,4 @@ Below is the whole process overview
 ![](screenshot/mobile_overview.jpg)
 
 ## Notes
-Some extras have been added not present on previous design.
-* The horizontal list of all orders has a badge added to reflect the number of products in the order.
-* A clear cart button on the cart list which clears all the orders.
-* The increment and decrement buttons have the functionality exposed to cart.
-* Toggling of the add to cart and remove to cart buttons
+Still in progress

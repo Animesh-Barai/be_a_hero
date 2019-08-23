@@ -22,7 +22,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/login_register_hand"/>
+            android:src="@drawable/blood_transfusion_3"/>
 
         <View
             android:layout_width="match_parent"

@@ -14,6 +14,12 @@
     <dimen name="spacing_mlarge">20dp</dimen>
     <dimen name="spacing_mxlarge">25dp</dimen>
     <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="spacing_xxlarge">40dp</dimen>
+    <dimen name="spacing_xxxlarge">60dp</dimen>
+    <dimen name="spacing_actionbar">48dp</dimen>
+    <dimen name="spacing_xmactionbar">56dp</dimen>
+    <dimen name="spacing_xactionbar">60dp</dimen>
+    <dimen name="spacing_xxactionbar">72dp</dimen>
 
     <dimen name="elevation_low">9dp</dimen>
     <dimen name="elevation_high">12dp</dimen>
