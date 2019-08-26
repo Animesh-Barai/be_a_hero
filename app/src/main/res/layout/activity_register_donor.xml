@@ -174,16 +174,19 @@
                 android:paddingBottom="@dimen/spacing_large" />
 
             <!--Radio Buttons-->
-            <LinearLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_below="@+id/check_box_remember_me">
+                android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/blood_group_radio_layout_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:layout_alignParentTop="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -198,6 +201,7 @@
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -218,6 +222,7 @@
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -231,12 +236,14 @@
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/blood_group_radio_3"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="A+"
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -250,12 +257,14 @@
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/blood_group_radio_4"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="A+"
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -269,12 +278,14 @@
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/blood_group_radio_5"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="A+"
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -288,12 +299,14 @@
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/blood_group_radio_6"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="A+"
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -307,7 +320,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/spacing_mmiddle">
+                    android:layout_marginTop="@dimen/spacing_mmiddle"
+                    android:layout_below="@+id/blood_group_radio_layout_1">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -315,12 +329,14 @@
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/blood_group_radio_7"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="A+"
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -334,12 +350,14 @@
                         android:layout_weight="1">
 
                         <RadioButton
+                            android:id="@+id/blood_group_radio_8"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="A+"
                             android:textSize="16sp"
                             android:gravity="center"
                             android:padding="@dimen/spacing_large"
+                            android:onClick="bloodGroupRadiosClicked"
                             app:fontFamily="@fonts/montserrat_regular"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_button_selector"
@@ -370,15 +388,7 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
-
-
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-            </RadioGroup>
+            </RelativeLayout>
 
         </LinearLayout>
 

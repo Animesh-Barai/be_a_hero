@@ -18,7 +18,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.data.Tools;
 import com.be_a_hero.app.databinding.ActivityPhoneRegistrationBinding;
 import com.be_a_hero.app.databinding.PopupVerifyCodeBinding;
 
