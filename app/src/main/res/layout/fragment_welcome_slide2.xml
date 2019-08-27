@@ -41,7 +41,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:text="Donate Blood"
+                android:text="Search Blood Donor"
                 android:textColor="@color/white"
                 app:fontFamily="@fonts/montserrat_medium" />
 
