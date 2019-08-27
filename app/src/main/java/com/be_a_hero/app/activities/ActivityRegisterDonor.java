@@ -6,10 +6,14 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.databinding.ActivityRegisterDonorBinding;
@@ -54,6 +58,16 @@ public class ActivityRegisterDonor extends BaseActivity {
             toggleGenderButtonStates(false);
         });
 
+        // listener for blood group radio groups
+        binding.bloodGroupRadioGroup1.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup2.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup3.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup4.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup5.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup6.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup7.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup8.setOnCheckedChangeListener(listener);
+
 //        Tools.systemBarLollipopTransparent(this);
     }
 
@@ -82,6 +96,64 @@ public class ActivityRegisterDonor extends BaseActivity {
         }
     }
 
+    private RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> {
+        switch (group.getId()){
+            case R.id.blood_group_radio_group_1:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_2:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_3:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_4:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_5:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_6:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_7,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_7:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_8:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_7);
+                break;
+        }
+    };
+
+    private void resetRadios(int checkedId, int radio_group_1, int radio_group_2, int radio_group_3, int radio_group_4, int radio_group_5
+            , int radio_group_6, int radio_group_7) {
+
+        // remove the listeners before clearing so we don't throw an exception
+        ((RadioGroup)findViewById(radio_group_1)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_2)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_3)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_4)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_5)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_6)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_7)).setOnCheckedChangeListener(null);
+        // clear all the other radion groups
+        ((RadioGroup)findViewById(radio_group_1)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_2)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_3)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_4)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_5)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_6)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_7)).clearCheck();
+        //reset the listeners
+        ((RadioGroup)findViewById(radio_group_1)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_2)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_3)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_4)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_5)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_6)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_7)).setOnCheckedChangeListener(listener);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,59 +162,9 @@ public class ActivityRegisterDonor extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void bloodGroupRadiosClicked(View view) {
-        switch (view.getId()){
-            case R.id.blood_group_radio_1:
-                resetRadios(view.getId(),R.id.blood_group_radio_2,R.id.blood_group_radio_3,R.id.blood_group_radio_4,R.id.blood_group_radio_5,R.id.blood_group_radio_6,R.id.blood_group_radio_6,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_2:
-                ((RadioButton)findViewById(view.getId())).setChecked(true);
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_3,R.id.blood_group_radio_4,R.id.blood_group_radio_5,R.id.blood_group_radio_6,R.id.blood_group_radio_6,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_3:
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_2,R.id.blood_group_radio_4,R.id.blood_group_radio_5,R.id.blood_group_radio_6,R.id.blood_group_radio_6,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_4:
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_2,R.id.blood_group_radio_3,R.id.blood_group_radio_5,R.id.blood_group_radio_6,R.id.blood_group_radio_6,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_5:
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_2,R.id.blood_group_radio_3,R.id.blood_group_radio_4,R.id.blood_group_radio_6,R.id.blood_group_radio_6,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_6:
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_2,R.id.blood_group_radio_3,R.id.blood_group_radio_4,R.id.blood_group_radio_5,R.id.blood_group_radio_7,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_7:
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_2,R.id.blood_group_radio_3,R.id.blood_group_radio_4,R.id.blood_group_radio_5,R.id.blood_group_radio_6,R.id.blood_group_radio_8);
-            case R.id.blood_group_radio_8:
-                resetRadios(view.getId(),R.id.blood_group_radio_1,R.id.blood_group_radio_2,R.id.blood_group_radio_3,R.id.blood_group_radio_4,R.id.blood_group_radio_5,R.id.blood_group_radio_6,R.id.blood_group_radio_7);
-
-        }
-
-    }
-
-    private void resetRadios(int checkedId, int blood_group_radio_1, int blood_group_radio_2, int blood_group_radio_3, int blood_group_radio_4, int blood_group_radio_5
-            , int blood_group_radio_6, int blood_group_radio_7) {
-        int textColor = ContextCompat.getColor(activityContext,R.color.colorAccent);
-
-        ((RadioButton)findViewById(blood_group_radio_1)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_1)).setTextColor(textColor);
-        ((RadioButton)findViewById(blood_group_radio_2)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_2)).setTextColor(textColor);
-        ((RadioButton)findViewById(blood_group_radio_3)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_3)).setTextColor(textColor);
-        ((RadioButton)findViewById(blood_group_radio_4)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_4)).setTextColor(textColor);
-        ((RadioButton)findViewById(blood_group_radio_5)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_5)).setTextColor(textColor);
-        ((RadioButton)findViewById(blood_group_radio_6)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_6)).setTextColor(textColor);
-        ((RadioButton)findViewById(blood_group_radio_7)).getBackground().setState(new int[] {-android.R.attr.state_checked,-android.R.attr.state_pressed});
-        ((RadioButton)findViewById(blood_group_radio_7)).setTextColor(textColor);
-
-        // the clicked button
-        ((RadioButton)findViewById(checkedId)).setChecked(true);
-        ((RadioButton)findViewById(checkedId)).setTextColor(ContextCompat.getColor(activityContext,R.color.white));
     }
 }
