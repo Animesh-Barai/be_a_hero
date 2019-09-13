@@ -37,6 +37,7 @@
     <string name="activity_case_detail">Case Detail</string>
     <string name="activity_business_line_detail">Business Detail</string>
     <string name="activity_register_donor">Become Donor</string>
+    <string name="activity_request_blood">Request for Blood</string>
 
     <string name="activity_verification">Verification</string>
 

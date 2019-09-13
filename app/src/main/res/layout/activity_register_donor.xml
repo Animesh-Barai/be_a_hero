@@ -93,11 +93,12 @@
                     android:layout_marginTop="@dimen/spacing_mmiddle">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="right"
                         android:orientation="vertical"
-                        android:layout_toLeftOf="@+id/gender_divider">
+                        android:layout_toLeftOf="@+id/gender_divider"
+                        android:layout_toStartOf="@+id/gender_divider">
 
                         <ImageView
                             android:id="@+id/gender_male_image_view"
@@ -111,14 +112,15 @@
 
                         <TextView
                             android:id="@+id/gender_male_text_view"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Male"
+                            android:gravity="end"
                             android:textSize="14sp"
                             android:textStyle="bold"
-                            android:layout_gravity="center"
                             app:fontFamily="@fonts/montserrat_medium"
                             android:textColor="@color/be_hero_dark_grey"
+                            android:paddingRight="@dimen/spacing_middle"
                             android:layout_marginTop="@dimen/spacing_medium"/>
 
                     </LinearLayout>
@@ -135,7 +137,7 @@
                         android:layout_marginRight="@dimen/spacing_mxlarge"/>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="left"
                         android:orientation="vertical"
@@ -156,10 +158,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Female"
+                            android:gravity="end"
                             android:textSize="14sp"
                             android:textStyle="bold"
-                            android:layout_gravity="center"
                             app:fontFamily="@fonts/montserrat_medium"
+                            android:paddingLeft="@dimen/spacing_middle"
                             android:textColor="@color/be_hero_dark_grey"
                             android:layout_marginTop="@dimen/spacing_medium"/>
 
@@ -384,14 +387,12 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/spacing_large"
-                    android:layout_marginBottom="@dimen/spacing_large">
+                    android:layout_marginTop="@dimen/spacing_xlarge">
 
                     <CheckBox
                         android:id="@+id/contacts_visible_checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:button="@drawable/checkbox_custom"
                         android:layout_marginRight="@dimen/spacing_large"/>
 
@@ -399,9 +400,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:gravity="start|center_vertical"
                         android:textColor="@color/be_hero_dark"
                         app:fontFamily="@fonts/montserrat_medium"
-                        android:text="Do you want to make contact number visible for thers" />
+                        android:text="Do you want to make contact number visible for others" />
 
                 </LinearLayout>
 
@@ -410,8 +413,7 @@
                     style="@style/RippleStyleWhite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_large"
-                    android:layout_marginBottom="@dimen/spacing_large"
+                    android:layout_marginTop="@dimen/spacing_xlarge"
                     android:layout_below="@+id/input_phone_number_layout">
 
                     <Button

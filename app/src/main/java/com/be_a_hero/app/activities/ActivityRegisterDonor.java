@@ -68,6 +68,11 @@ public class ActivityRegisterDonor extends BaseActivity {
         binding.bloodGroupRadioGroup7.setOnCheckedChangeListener(listener);
         binding.bloodGroupRadioGroup8.setOnCheckedChangeListener(listener);
 
+        // show next screen
+        binding.buttonRegisterDonor.setOnClickListener(v -> {
+            ActivityRequestBlood.start(activityContext);
+        });
+
 //        Tools.systemBarLollipopTransparent(this);
     }
 

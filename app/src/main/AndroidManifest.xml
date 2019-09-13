@@ -58,6 +58,11 @@
             android:label="@string/activity_register_donor"
             android:windowSoftInputMode="stateHidden"/>
 
+        <activity
+            android:name=".activities.ActivityRequestBlood"
+            android:label="@string/activity_request_blood"
+            android:windowSoftInputMode="stateHidden"/>
+
     </application>
 
 </manifest>
