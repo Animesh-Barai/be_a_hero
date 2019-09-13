@@ -177,9 +177,8 @@
                     android:textStyle="bold"
                     android:text="Select Blood Group"
                     android:textColor="@color/be_hero_dark"
-                    android:paddingTop="@dimen/spacing_large"
                     app:fontFamily="@fonts/montserrat_regular"
-                    android:layout_marginTop="@dimen/spacing_large" />
+                    android:layout_marginTop="@dimen/spacing_xlarge" />
 
                 <!--Blood Group Radio Buttons-->
                 <RelativeLayout

@@ -25,6 +25,10 @@ public class ActivityRequestBlood extends BaseActivity {
 
     ActivityRequestBloodBinding binding;
 
+    String[] persons = {"Friend", "Family", "Relative", "Patient", "Work Colleague", "Anonymous"};
+
+    String[] cities = {"Mumbai", "Bengaluru", "Chennai", "Kolkata", "New Delhi", "Sorat"};
+
     private View parent_view;
 
     public static void start(Context context) {
@@ -43,17 +47,31 @@ public class ActivityRequestBlood extends BaseActivity {
         initToolbar(binding.toolbar,true);
         setToolbarTitle(null);
 
-        String[] data = {"Java", "Python", "C++", "C#", "Angular", "Go"};
+        // requesting for spinner
+        ArrayAdapter personsAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, persons);
+        personsAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, data);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-        Spinner spinner = findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        binding.requestForSpinner.setAdapter(personsAdapter);
+        binding.requestForSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(activityContext,parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        // cities spinner
+        ArrayAdapter citiesAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, cities);
+        citiesAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        binding.citySpinner.setAdapter(citiesAdapter);
+        binding.citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(activityContext,"City "+parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
             }
 
             @Override
