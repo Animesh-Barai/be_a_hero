@@ -5,18 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.databinding.ActivityRegisterDonorBinding;
 import com.be_a_hero.app.databinding.ActivityRequestBloodBinding;
 
 public class ActivityRequestBlood extends BaseActivity {
@@ -25,9 +22,9 @@ public class ActivityRequestBlood extends BaseActivity {
 
     ActivityRequestBloodBinding binding;
 
-    String[] persons = {"Friend", "Family", "Relative", "Patient", "Work Colleague", "Anonymous"};
+    String[] persons = {"Select Person Type","Friend", "Family", "Relative", "Patient", "Work Colleague", "Anonymous"};
 
-    String[] cities = {"Mumbai", "Bengaluru", "Chennai", "Kolkata", "New Delhi", "Sorat"};
+    String[] cities = {"Select City","Mumbai", "Bengaluru", "Chennai", "Kolkata", "New Delhi", "Sorat"};
 
     private View parent_view;
 
@@ -50,12 +47,14 @@ public class ActivityRequestBlood extends BaseActivity {
         // requesting for spinner
         ArrayAdapter personsAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, persons);
         personsAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
         binding.requestForSpinner.setAdapter(personsAdapter);
+        binding.requestForSpinner.setSelection(0,false);
         binding.requestForSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(activityContext,parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+                if(position != 0){
+                    Toast.makeText(activityContext,parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
@@ -68,10 +67,13 @@ public class ActivityRequestBlood extends BaseActivity {
         ArrayAdapter citiesAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, cities);
         citiesAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         binding.citySpinner.setAdapter(citiesAdapter);
+        binding.citySpinner.setSelection(0,false);
         binding.citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(activityContext,"City "+parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+                if(position != 0){
+                    Toast.makeText(activityContext,parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
