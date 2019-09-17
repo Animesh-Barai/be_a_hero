@@ -80,9 +80,76 @@ public class ActivityRequestBlood extends BaseActivity {
             }
         });
 
+        // listener for blood group radio groups
+        binding.bloodGroupRadioGroup1.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup2.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup3.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup4.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup5.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup6.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup7.setOnCheckedChangeListener(listener);
+        binding.bloodGroupRadioGroup8.setOnCheckedChangeListener(listener);
+
 //        Tools.systemBarLollipopTransparent(this);
     }
 
+    private RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> {
+        switch (group.getId()){
+            case R.id.blood_group_radio_group_1:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_2:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_3:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_4:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_5:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_6:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_7,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_7:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_8);
+                break;
+            case R.id.blood_group_radio_group_8:
+                resetRadios(group.getId(),R.id.blood_group_radio_group_1,R.id.blood_group_radio_group_2,R.id.blood_group_radio_group_3,R.id.blood_group_radio_group_4,R.id.blood_group_radio_group_5,R.id.blood_group_radio_group_6,R.id.blood_group_radio_group_7);
+                break;
+        }
+    };
+
+    private void resetRadios(int checkedId, int radio_group_1, int radio_group_2, int radio_group_3, int radio_group_4, int radio_group_5
+            , int radio_group_6, int radio_group_7) {
+
+        // remove the listeners before clearing so we don't throw an exception
+        ((RadioGroup)findViewById(radio_group_1)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_2)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_3)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_4)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_5)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_6)).setOnCheckedChangeListener(null);
+        ((RadioGroup)findViewById(radio_group_7)).setOnCheckedChangeListener(null);
+        // clear all the other radion groups
+        ((RadioGroup)findViewById(radio_group_1)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_2)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_3)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_4)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_5)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_6)).clearCheck();
+        ((RadioGroup)findViewById(radio_group_7)).clearCheck();
+        //reset the listeners
+        ((RadioGroup)findViewById(radio_group_1)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_2)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_3)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_4)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_5)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_6)).setOnCheckedChangeListener(listener);
+        ((RadioGroup)findViewById(radio_group_7)).setOnCheckedChangeListener(listener);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
