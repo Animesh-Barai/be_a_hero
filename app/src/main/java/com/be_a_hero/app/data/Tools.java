@@ -11,7 +11,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.activities.ActivityRegister;
 
 public class Tools {
     private static float getAPIVersison() {
