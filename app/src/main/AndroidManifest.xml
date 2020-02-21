@@ -6,7 +6,6 @@
     <uses-sdk
         tools:overrideLibrary="com.bigbangbutton.editcodeview" />
 
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -40,27 +39,34 @@
         <activity
             android:name=".activities.ActivityWelcomeScreen"
             android:label="@string/activity_welcome_screen"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/AppTheme.WhiteStatusBar"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity
             android:name=".activities.ActivityRegister"
             android:label="@string/activity_login_register"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/AppTheme.FullScreen"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity
             android:name=".activities.ActivityPhoneRegistration"
+            android:theme="@style/AppTheme.WhiteStatusBar"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity
             android:name=".activities.ActivityRegisterDonor"
             android:label="@string/activity_register_donor"
+            android:theme="@style/AppTheme.WhiteStatusBar"
             android:windowSoftInputMode="stateHidden"/>
 
         <activity
             android:name=".activities.ActivityRequestBlood"
             android:label="@string/activity_request_blood"
+            android:theme="@style/AppTheme.WhiteStatusBar"
+            android:windowSoftInputMode="stateHidden"/>
+
+        <activity
+            android:name=".activities.ActivityHome"
             android:windowSoftInputMode="stateHidden"/>
 
     </application>

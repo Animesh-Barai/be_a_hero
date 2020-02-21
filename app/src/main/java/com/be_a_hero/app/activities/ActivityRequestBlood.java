@@ -92,7 +92,10 @@ public class ActivityRequestBlood extends BaseActivity {
         binding.bloodGroupRadioGroup7.setOnCheckedChangeListener(listener);
         binding.bloodGroupRadioGroup8.setOnCheckedChangeListener(listener);
 
-//        Tools.systemBarLollipopTransparent(this);
+        // show next screen
+        binding.buttonRequestBlood.setOnClickListener(v -> {
+            ActivityHome.start(activityContext);
+        });
     }
 
     private RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> {

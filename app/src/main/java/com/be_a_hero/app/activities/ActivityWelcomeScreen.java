@@ -37,11 +37,6 @@ public class ActivityWelcomeScreen extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Making notification bar transparent
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome_screen);
         parent_view = findViewById(android.R.id.content);
 

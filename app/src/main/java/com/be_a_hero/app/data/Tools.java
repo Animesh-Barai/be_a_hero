@@ -46,6 +46,17 @@ public class Tools {
         }
     }
 
+    public static void setStatusBarColor(int color, Activity act){
+        if (getAPIVersison() >= 5.0) {
+            Window window = act.getWindow();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(color);
+            }
+        }
+    }
+
     public static int getGridSpanCount(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         DisplayMetrics displayMetrics = new DisplayMetrics();
