@@ -7,6 +7,8 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.databinding.ActivityRegisterBinding;
@@ -29,9 +31,11 @@ public class ActivityRegister extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         // Making notification bar transparent
-        if(Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
+        Window window = getWindow();
+        WindowManager.LayoutParams winParams = window.getAttributes();
+        winParams.flags &= ~WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        window.setAttributes(winParams);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
 

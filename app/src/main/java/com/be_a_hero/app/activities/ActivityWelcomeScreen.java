@@ -55,8 +55,6 @@ public class ActivityWelcomeScreen extends BaseActivity {
 
         // go to the register activity
         binding.finishTextView.setOnClickListener(v -> ActivityRegister.start(activityContext));
-
-//        Tools.systemBarLollipopTransparent(this);
     }
 
     //  viewpager change listener
