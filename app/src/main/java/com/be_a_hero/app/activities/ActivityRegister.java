@@ -38,8 +38,6 @@ public class ActivityRegister extends BaseActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
 
-        // init views
-
         // go to the register activity
         binding.mobilePhoneLayout.setOnClickListener(v -> ActivityPhoneRegistration.start(activityContext));
     }

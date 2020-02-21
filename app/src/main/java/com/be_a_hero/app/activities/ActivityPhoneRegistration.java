@@ -52,8 +52,6 @@ public class ActivityPhoneRegistration extends BaseActivity {
         binding.buttonPhoneVerify.setOnClickListener(v -> {
             showConfirmVerificationDialog(activityContext);
         });
-
-//        Tools.systemBarLollipopTransparent(this);
     }
 
     // show the confirm verification dialog

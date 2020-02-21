@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/layout_parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/curves_splash">
 
@@ -79,7 +79,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_large"/>
+                android:layout_height="@dimen/spacing_mlarge"/>
 
             <com.be_a_hero.app.widget.MaterialRippleLayout
                 style="@style/RippleStyleWhite"
@@ -121,7 +121,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_large"/>
+                android:layout_height="@dimen/spacing_mlarge"/>
 
             <com.be_a_hero.app.widget.MaterialRippleLayout
                 style="@style/RippleStyleWhite"

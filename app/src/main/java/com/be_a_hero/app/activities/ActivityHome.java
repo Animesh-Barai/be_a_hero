@@ -31,6 +31,7 @@ public class ActivityHome extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         parent_view = findViewById(android.R.id.content);
 
-        initToolbar(binding.toolbar,false);
+        //initToolbar(binding.toolbar,false);
+
     }
 }
