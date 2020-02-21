@@ -40,81 +40,74 @@
                         app:cardElevation="0dp"
                         app:cardUseCompatPadding="true"
                         android:layout_alignParentTop="true"
+                        app:contentPadding="@dimen/spacing_large"
                         app:cardBackgroundColor="@color/colorAccent"
                         app:cardCornerRadius="@dimen/spacing_middle">
 
-                        <com.be_a_hero.app.widget.MaterialRippleLayout
-                            android:id="@+id/find_donor_ripple"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false"
+                            android:paddingTop="@dimen/spacing_large"
+                            android:paddingBottom="@dimen/spacing_large">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:paddingTop="@dimen/spacing_mxlarge"
-                                android:paddingBottom="@dimen/spacing_mxlarge"
-                                android:layout_marginLeft="@dimen/spacing_large"
-                                android:layout_marginRight="@dimen/spacing_large">
+                            <RelativeLayout
+                                android:id="@+id/find_donor_totals"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
 
-                                <RelativeLayout
-                                    android:id="@+id/find_donor_totals"
-                                    android:layout_width="0dp"
+                                <TextView
+                                    android:id="@+id/donor_totals_text_view"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1">
+                                    android:text="120966"
+                                    android:textSize="26sp"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:letterSpacing="0.10"
+                                    android:layout_alignParentTop="true"
+                                    android:textColor="@android:color/white"
+                                    app:fontFamily="@fonts/montserrat_light" />
 
-                                    <TextView
-                                        android:id="@+id/donor_totals_text_view"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="120966"
-                                        android:textSize="26sp"
-                                        android:gravity="center"
-                                        android:textStyle="bold"
-                                        android:letterSpacing="0.10"
-                                        android:layout_alignParentTop="true"
-                                        android:textColor="@android:color/white"
-                                        app:fontFamily="@fonts/montserrat_light" />
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Donors"
-                                        android:textStyle="bold"
-                                        android:gravity="center"
-                                        android:letterSpacing="0.10"
-                                        android:textColor="@android:color/white"
-                                        app:fontFamily="@fonts/montserrat_light"
-                                        android:layout_below="@+id/donor_totals_text_view" />
-
-                                </RelativeLayout>
-
-                                <com.be_a_hero.app.widget.MaterialRippleLayout
-                                    style="@style/RippleStyleWhite"
-                                    android:layout_width="0dp"
+                                <TextView
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1.25"
-                                    android:layout_marginLeft="@dimen/spacing_mmiddle"
-                                    android:layout_marginStart="@dimen/spacing_mmiddle">
+                                    android:text="Donors"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:letterSpacing="0.10"
+                                    android:textColor="@android:color/white"
+                                    app:fontFamily="@fonts/montserrat_light"
+                                    android:layout_below="@+id/donor_totals_text_view" />
 
-                                    <Button
-                                        android:id="@+id/button_find_donor"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Find Donor"
-                                        android:textSize="12sp"
-                                        android:textStyle="bold"
-                                        android:textAllCaps="true"
-                                        android:padding="@dimen/spacing_mmiddle"
-                                        app:fontFamily="@fonts/montserrat_medium"
-                                        android:textColor="@color/be_hero_dark_grey"
-                                        android:background="@drawable/round_white_button_bg"/>
+                            </RelativeLayout>
 
-                                </com.be_a_hero.app.widget.MaterialRippleLayout>
+                            <com.be_a_hero.app.widget.MaterialRippleLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.25"
+                                style="@style/RippleStyleBlack"
+                                android:layout_marginLeft="@dimen/spacing_mmiddle"
+                                android:layout_marginStart="@dimen/spacing_mmiddle">
 
-                            </LinearLayout>
+                                <Button
+                                    android:id="@+id/button_find_donor"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Find Donor"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:padding="@dimen/spacing_mmiddle"
+                                    app:fontFamily="@fonts/montserrat_medium"
+                                    android:textColor="@color/be_hero_dark_grey"
+                                    android:background="@drawable/round_white_button_bg"/>
 
-                        </com.be_a_hero.app.widget.MaterialRippleLayout>
+                            </com.be_a_hero.app.widget.MaterialRippleLayout>
+
+                        </LinearLayout>
 
                     </android.support.v7.widget.CardView>
 
