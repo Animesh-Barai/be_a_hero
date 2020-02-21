@@ -38,9 +38,12 @@
     </style>
 
     <style name="AppTheme.FullScreen" parent="BaseTheme">
-        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">serif</item>
     </style>
 
     <style name="ArrowToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
