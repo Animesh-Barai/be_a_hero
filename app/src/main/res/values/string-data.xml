@@ -62,6 +62,28 @@
         <item>@drawable/photo_male_4</item>
     </integer-array>
 
+    <string-array name="people_locations">
+        <item>Manchester</item>
+        <item>Newcastle</item>
+        <item>London</item>
+        <item>Manchester</item>
+        <item>Cardiff</item>
+        <item>Birmingham</item>
+        <item>Bristol</item>
+        <item>Birmingham</item>
+    </string-array>
+
+    <string-array name="blood_groups">
+        <item>A-</item>
+        <item>AB-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O+</item>
+        <item>A-</item>
+        <item>O-</item>
+    </string-array>
+
     <integer-array name="post_images">
         <item>@drawable/post_content_1</item>
         <item>@drawable/post_content_2</item>
@@ -78,6 +100,17 @@
         <item>On the occasion of World Blood Donor Day 2019, WHO Regional Director for the Eastern Mediterranean Dr Ahmed Al-Mandhari emphasized that everyone in the world had the right to access safe blood transfusion, when and where it was needed.</item>
         <item>An Australian man who has given blood a record-breaking 1,173 times, helping to save more than two million babies, has made his final donation.</item>
         <item>The FreedomToDonate campaign has helped to launch and announce a parliamentary inquiry, bringing together leading charities, organisations and health experts in blood donation policy area. </item>
+    </string-array>
+
+    <string-array name="last_donation_dates">
+        <item>20 Nov, 2019</item>
+        <item>08 Feb, 2020</item>
+        <item>01 Jan, 2020</item>
+        <item>19 Jun, 2019</item>
+        <item>20 Nov, 2019</item>
+        <item>26 Jul, 2019</item>
+        <item>11 Jan, 2020</item>
+        <item>08 Feb, 2020</item>
     </string-array>
 
 </resources>
