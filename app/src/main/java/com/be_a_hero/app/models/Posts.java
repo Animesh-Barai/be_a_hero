@@ -2,25 +2,29 @@ package com.be_a_hero.app.models;
 
 import java.io.Serializable;
 
-public class Post implements Serializable {
+public class Posts implements Serializable {
     private int id;
-    private String profileName;
-    private int profileImage;
+    private Users user;
     private String timeAgo;
-    private String location;
     private String postContent;
     private int postImage;
     private boolean isLiked;
 
-    public Post() {
+    public Posts() {
     }
 
-    public Post(int id, String profileName, int profileImage, String timeAgo, String location, String postContent, int postImage, boolean isLiked) {
+    public Posts(int id, Users user, String timeAgo, String postContent, int postImage) {
         this.id = id;
-        this.profileName = profileName;
-        this.profileImage = profileImage;
+        this.user = user;
         this.timeAgo = timeAgo;
-        this.location = location;
+        this.postContent = postContent;
+        this.postImage = postImage;
+    }
+
+    public Posts(int id, Users user, String timeAgo, String postContent, int postImage, boolean isLiked) {
+        this.id = id;
+        this.user = user;
+        this.timeAgo = timeAgo;
         this.postContent = postContent;
         this.postImage = postImage;
         this.isLiked = isLiked;
@@ -34,20 +38,12 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public String getProfileName() {
-        return profileName;
+    public Users getUser() {
+        return user;
     }
 
-    public void setProfileName(String profileName) {
-        this.profileName = profileName;
-    }
-
-    public int getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(int profileImage) {
-        this.profileImage = profileImage;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public String getTimeAgo() {
@@ -56,14 +52,6 @@ public class Post implements Serializable {
 
     public void setTimeAgo(String timeAgo) {
         this.timeAgo = timeAgo;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getPostContent() {

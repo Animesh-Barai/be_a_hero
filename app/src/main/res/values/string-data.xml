@@ -102,6 +102,19 @@
         <item>The FreedomToDonate campaign has helped to launch and announce a parliamentary inquiry, bringing together leading charities, organisations and health experts in blood donation policy area. </item>
     </string-array>
 
+    <!--dates-->
+    <string-array name="post_dates">
+        <item>12 Nov, 2019</item>
+        <item>01 Jan, 2020</item>
+        <item>28 Dec, 2020</item>
+        <item>18 Feb, 2020</item>
+        <item>21 Feb, 2020</item>
+        <item>19 Jan, 2020</item>
+        <item>21 Dec, 2019</item>
+        <item>25 Dec, 2019</item>
+        <item>03 Oct, 2019</item>
+    </string-array>
+
     <string-array name="last_donation_dates">
         <item>20 Nov, 2019</item>
         <item>08 Feb, 2020</item>
