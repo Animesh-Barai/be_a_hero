@@ -8,20 +8,20 @@ public class Post implements Serializable {
     private int profileImage;
     private String timeAgo;
     private String location;
-    private String postText;
+    private String postContent;
     private int postImage;
     private boolean isLiked;
 
     public Post() {
     }
 
-    public Post(int id, String profileName, int profileImage, String timeAgo, String location, String postText, int postImage, boolean isLiked) {
+    public Post(int id, String profileName, int profileImage, String timeAgo, String location, String postContent, int postImage, boolean isLiked) {
         this.id = id;
         this.profileName = profileName;
         this.profileImage = profileImage;
         this.timeAgo = timeAgo;
         this.location = location;
-        this.postText = postText;
+        this.postContent = postContent;
         this.postImage = postImage;
         this.isLiked = isLiked;
     }
@@ -66,12 +66,12 @@ public class Post implements Serializable {
         this.location = location;
     }
 
-    public String getPostText() {
-        return postText;
+    public String getPostContent() {
+        return postContent;
     }
 
-    public void setPostText(String postText) {
-        this.postText = postText;
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 
     public int getPostImage() {
