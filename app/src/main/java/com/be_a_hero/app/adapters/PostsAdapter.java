@@ -5,16 +5,19 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.RelativeLayout;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.databinding.ItemPostBinding;
 import com.be_a_hero.app.models.Posts;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -65,6 +68,27 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         final Posts obj = filtered_items.get(position);
+
+        // set the views
+
+        holder.binding.userNameTextView.setText(obj.getUser().getName());
+        holder.binding.userImageView.setImageResource(obj.getUser().getImage());
+        holder.binding.postImageView.setImageResource(obj.getPostImage());
+        holder.binding.postContentTextView.setText(Html.fromHtml(obj.getPostContent()));
+        holder.binding.userLocationTextView.setText(obj.getUser().getLocation());
+
+        if(position % 2 != 0){
+            holder.binding.postImageView.setVisibility(View.VISIBLE);
+            holder.binding.userVerifiedImageView.setVisibility(View.GONE);
+        }else{
+            holder.binding.postImageView.setVisibility(View.GONE);
+            holder.binding.userVerifiedImageView.setVisibility(View.VISIBLE);
+            holder.binding.actionShareImageView.setVisibility(View.GONE);
+        }
+
+        if(position % 3 == 0 && position !=0){
+            holder.binding.postContentTextView.setVisibility(View.GONE);
+        }
 
         // Here you apply the animation when the view is bound
         setAnimation(holder.itemView, position);

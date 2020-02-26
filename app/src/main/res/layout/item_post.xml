@@ -140,17 +140,34 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/post_content_1"
                 android:layout_below="@+id/top_layout"
-                android:layout_marginTop="@dimen/spacing_middle"
-                android:layout_marginBottom="@dimen/spacing_middle" />
+                android:layout_marginTop="@dimen/spacing_middle" />
 
+            <!--post content-->
+            <TextView
+                android:id="@+id/post_content_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/md_grey_800"
+                android:text="@string/long_lorem_ipsum"
+                app:fontFamily="@fonts/montserrat_light"
+                android:layout_below="@+id/post_image_view"
+                android:paddingLeft="@dimen/spacing_large"
+                android:paddingRight="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing_middle" />
+
+            <!--Actions layout-->
             <RelativeLayout
                 android:id="@+id/actions_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/post_image_view"
                 android:paddingLeft="@dimen/spacing_large"
                 android:paddingRight="@dimen/spacing_large"
-                android:layout_marginBottom="@dimen/spacing_middle">
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_below="@+id/post_content_text_view">
 
                 <ImageView
                     android:id="@+id/action_like_image_view"
@@ -167,6 +184,20 @@
                     android:background="@drawable/circle_silver_stroke"/>
 
                 <ImageView
+                    android:id="@+id/action_share_image_view"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:tint="@color/colorPrimary"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/spacing_mmiddle"
+                    app:srcCompat="@drawable/ic_action_share"
+                    android:layout_marginEnd="@dimen/spacing_large"
+                    android:layout_marginRight="@dimen/spacing_large"
+                    android:background="@drawable/circle_silver_stroke"
+                    android:layout_toEndOf="@+id/action_like_image_view"
+                    android:layout_toRightOf="@+id/action_like_image_view" />
+
+                <ImageView
                     android:id="@+id/action_comment_image_view"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
@@ -175,26 +206,10 @@
                     android:padding="@dimen/spacing_mmiddle"
                     app:srcCompat="@drawable/ic_comment_bubble"
                     android:background="@drawable/circle_silver_stroke"
-                    android:layout_toEndOf="@+id/action_like_image_view"
-                    android:layout_toRightOf="@+id/action_like_image_view" />
+                    android:layout_toEndOf="@+id/action_share_image_view"
+                    android:layout_toRightOf="@+id/action_share_image_view" />
 
             </RelativeLayout>
-
-            <!--post content-->
-            <TextView
-                android:id="@+id/post_content_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="3"
-                android:textSize="14sp"
-                android:ellipsize="end"
-                android:lineSpacingMultiplier="1.2"
-                android:textColor="@color/md_grey_800"
-                android:text="@string/long_lorem_ipsum"
-                app:fontFamily="@fonts/montserrat_light"
-                android:layout_below="@+id/actions_layout"
-                android:paddingLeft="@dimen/spacing_large"
-                android:paddingRight="@dimen/spacing_large" />
 
         </RelativeLayout>
 
