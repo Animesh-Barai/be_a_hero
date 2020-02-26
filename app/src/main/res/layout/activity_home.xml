@@ -130,13 +130,13 @@
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-                <TextView
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/posts_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:textSize="24sp"
-                    android:lineSpacingExtra="8dp"
-                    android:text="@string/long_lorem_ipsum" />
+                    android:scrollingCache="true"
+                    android:scrollbars="vertical"
+                    android:cacheColorHint="#00000000"/>
 
             </android.support.v4.widget.NestedScrollView>
 
