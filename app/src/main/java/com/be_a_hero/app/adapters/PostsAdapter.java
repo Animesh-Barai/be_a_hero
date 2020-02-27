@@ -12,13 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.RelativeLayout;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ItemPostBinding;
 import com.be_a_hero.app.models.Posts;
-import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -82,6 +80,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         holder.binding.postContentTextView.setText(Html.fromHtml(obj.getPostContent()));
         holder.binding.userLocationTextView.setText(obj.getUser().getLocation());
 
+        // show the time ago
+        SimpleDateFormat format = new SimpleDateFormat("dd MMM, yyyy", Locale.getDefault());
+        try {
+            Date datePostCreated = format.parse(obj.getTimeAgo());
+            Log.e("datePostCreated",datePostCreated.toString());
+            holder.binding.postTimeTextView.setText(Constants.timeAgoTimeDiff(datePostCreated,new Date()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+            holder.binding.postTimeTextView.setText(obj.getTimeAgo());
+        }
+
+        // to show and hide the various layouts
         if(position % 2 != 0){
             holder.binding.postImageView.setVisibility(View.VISIBLE);
             holder.binding.userVerifiedImageView.setVisibility(View.GONE);
@@ -95,19 +105,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             holder.binding.postContentTextView.setVisibility(View.GONE);
         }
 
-        SimpleDateFormat format = new SimpleDateFormat("dd MMM, yyyy", Locale.US);
-        try {
-            Date datePostCreated = format.parse(obj.getTimeAgo());
-             holder.binding.postTimeTextView.setText(Constants.timeAgoTimeDiff(datePostCreated,new Date()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-            holder.binding.postTimeTextView.setText(obj.getTimeAgo());
-        }
-
         // Here you apply the animation when the view is bound
         setAnimation(holder.itemView, position);
 
-        // comment
+        // click listeners
         holder.binding.lytParent.setOnClickListener(view -> {
             if (mOnItemClickListener != null) {
                 mOnItemClickListener.onItemClick(view, position, obj);

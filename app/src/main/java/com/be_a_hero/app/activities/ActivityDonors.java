@@ -12,10 +12,18 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.adapters.PostsAdapter;
+import com.be_a_hero.app.adapters.DonorsAdapter;
 import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ActivityDonorsBinding;
-import com.be_a_hero.app.databinding.ActivityHomeBinding;
+import com.be_a_hero.app.models.HeaderItem;
+import com.be_a_hero.app.models.RowItem;
+import com.be_a_hero.app.models.Users;
+import com.be_a_hero.app.models.UsersListItem;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 public class ActivityDonors extends BaseActivity {
 
@@ -24,6 +32,8 @@ public class ActivityDonors extends BaseActivity {
     ActivityDonorsBinding binding;
 
     private View parent_view;
+
+    private DonorsAdapter donorsAdapter;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, ActivityDonors.class);
@@ -40,6 +50,64 @@ public class ActivityDonors extends BaseActivity {
 
         initToolbar(binding.toolbar,true);
 
+        bindRecyclerView();
+    }
+
+    private void bindRecyclerView() {
+        // show the list of donors
+        binding.donorsRecyclerView.setLayoutManager(new LinearLayoutManager(activityContext));
+        binding.donorsRecyclerView.setHasFixedSize(true);
+        binding.donorsRecyclerView.setNestedScrollingEnabled(false);
+        //set data and list adapter
+        donorsAdapter = new DonorsAdapter(activityContext, null);
+        binding.donorsRecyclerView.setAdapter(donorsAdapter);
+    }
+
+    private void groupDataIntoHashMap(List<Users> usersList) {
+
+        HashMap<String, List<Users>> groupedHashMap = new HashMap<>();
+
+        for(Users userModel : usersList) {
+
+            String hashMapKey = userModel.getLastDonatedDate();
+
+            if(groupedHashMap.containsKey(hashMapKey)) {
+                // The key is already in the HashMap; add the pojo object
+                // against the existing key.
+                Objects.requireNonNull(groupedHashMap.get(hashMapKey)).add(userModel);
+            } else {
+                // The key is not there in the HashMap; create a new key-value pair
+                List<Users> list = new ArrayList<>();
+                list.add(userModel);
+                groupedHashMap.put(hashMapKey, list);
+            }
+        }
+
+        //Generate list from map
+        generateListFromMap(groupedHashMap);
+    }
+
+    private void generateListFromMap(HashMap<String, List<Users>> groupedHashMap) {
+        // We linearly add every item into the consolidatedList.
+        List<UsersListItem> consolidatedList = new ArrayList<>();
+        for (String date : groupedHashMap.keySet()) {
+            HeaderItem headerItem = new HeaderItem();
+            headerItem.setDate(date);
+            consolidatedList.add(headerItem);
+            for (Users userModel : Objects.requireNonNull(groupedHashMap.get(date))) {
+                RowItem rowItem = new RowItem();
+                rowItem.setUsers(userModel);
+                consolidatedList.add(rowItem);
+            }
+        }
+
+        donorsAdapter.setUsersListItemList(consolidatedList);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        groupDataIntoHashMap(Constants.getUsers(activityContext));
     }
 
     @Override
