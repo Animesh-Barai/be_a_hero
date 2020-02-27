@@ -3,6 +3,7 @@ package com.be_a_hero.app.data;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.format.DateFormat;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.models.Posts;
@@ -10,6 +11,7 @@ import com.be_a_hero.app.models.Users;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -59,5 +61,34 @@ public class Constants {
 
     private static String getRandomValue(Context ctx, String[] parsed_arr) {
         return parsed_arr[getRandomIndex(rnd, 0, parsed_arr.length - 1)];
+    }
+
+    // calculate time ago from given date
+    public static String timeAgoTimeDiff(Date startDate, Date endDate) {
+
+        long timeDifferenceMilliseconds = endDate.getTime() - startDate.getTime();
+
+        long diffSeconds = timeDifferenceMilliseconds / 1000;
+        long diffMinutes = timeDifferenceMilliseconds / (60 * 1000);
+        long diffHours = timeDifferenceMilliseconds / (60 * 60 * 1000);
+        long diffDays = timeDifferenceMilliseconds / (60 * 60 * 1000 * 24);
+        long diffWeeks = timeDifferenceMilliseconds / (60 * 60 * 1000 * 24 * 7);
+        long diffMonths = (long) (timeDifferenceMilliseconds / (60 * 60 * 1000 * 24 * 30.41666666));
+        long diffYears = timeDifferenceMilliseconds / ((long)60 * 60 * 1000 * 24 * 365);
+
+        if (diffSeconds < 1) {
+            return "1 second";
+        }else if (diffMinutes < 1) {
+            return diffSeconds + " Seconds";
+        }//Minutes
+        else if (diffMinutes <= 60) {
+            if (diffMinutes == 1) {
+                return "1 Minute";
+            } else {
+                return diffMinutes + " Minutes";
+            }
+        }else{
+            return DateFormat.format("dd-MMM-yyyy", new Date(endDate.getTime())).toString();
+        }
     }
 }

@@ -15,11 +15,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 
 import com.be_a_hero.app.R;
+import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ItemPostBinding;
 import com.be_a_hero.app.models.Posts;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
@@ -88,6 +93,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         if(position % 3 == 0 && position !=0){
             holder.binding.postContentTextView.setVisibility(View.GONE);
+        }
+
+        SimpleDateFormat format = new SimpleDateFormat("dd MMM, yyyy", Locale.US);
+        try {
+            Date datePostCreated = format.parse(obj.getTimeAgo());
+             holder.binding.postTimeTextView.setText(Constants.timeAgoTimeDiff(datePostCreated,new Date()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+            holder.binding.postTimeTextView.setText(obj.getTimeAgo());
         }
 
         // Here you apply the animation when the view is bound
