@@ -42,6 +42,12 @@ public class ActivityHome extends BaseActivity {
     }
 
     private void initViews() {
+
+        // show all the donors
+        binding.homeContentTop.buttonFindDonor.setOnClickListener(v -> {
+            ActivityDonors.start(activityContext);
+        });
+
         // show the posts
         binding.postsRecyclerView.setLayoutManager(new LinearLayoutManager(activityContext));
         binding.postsRecyclerView.setHasFixedSize(true);

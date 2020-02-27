@@ -68,6 +68,12 @@
             android:name=".activities.ActivityHome"
             android:windowSoftInputMode="stateHidden"/>
 
+        <activity
+            android:name=".activities.ActivityDonors"
+            android:label="@string/activity_all_donors"
+            android:theme="@style/AppTheme.WhiteStatusBar"
+            android:windowSoftInputMode="stateHidden"/>
+
     </application>
 
 </manifest>

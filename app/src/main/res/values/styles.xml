@@ -37,7 +37,7 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
 
-    <style name="AppTheme.FullScreen" parent="BaseTheme">
+    <style name="AppTheme.FullScreen" parent="AppTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -49,7 +49,12 @@
     <style name="ArrowToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <!-- Customize color of navigation drawer icon and back arrow -->
         <item name="colorControlNormal">@color/colorPrimary</item>
+    </style>
 
+    <style name="DarkArrowToolbarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/be_hero_dark</item>
+        <item name="android:textColorSecondary">@color/be_hero_dark</item>
+        <item name="actionMenuTextColor">@color/be_hero_dark</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -67,11 +72,11 @@
         <item name="mrl_rippleColor">#8096989A</item>
     </style>
 
-    <style name="AppTheme.WhiteStatusBar" parent="AppTheme" tools:ignore="NewApi">
+    <style name="AppTheme.WhiteStatusBar" parent="AppTheme">
         <item name="colorPrimaryDark">@android:color/white</item>
         <!-- Status bar stuff. -->
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
 
     <style name="Divider">
