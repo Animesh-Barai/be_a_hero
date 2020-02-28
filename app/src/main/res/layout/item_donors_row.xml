@@ -96,8 +96,8 @@
                     android:text="@string/ask_for_help"
                     android:textColor="@color/md_grey_600"
                     app:fontFamily="@fonts/montserrat_bold"
-                    android:paddingTop="@dimen/spacing_xmlarge"
-                    android:paddingBottom="@dimen/spacing_xmlarge"
+                    android:paddingTop="@dimen/spacing_middle"
+                    android:paddingBottom="@dimen/spacing_middle"
                     android:background="@drawable/round_rect_button_silver_border"/>
 
             </com.be_a_hero.app.widget.MaterialRippleLayout>

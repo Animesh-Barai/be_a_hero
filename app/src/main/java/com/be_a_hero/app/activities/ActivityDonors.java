@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,6 +64,11 @@ public class ActivityDonors extends BaseActivity {
         //set data and list adapter
         donorsAdapter = new DonorsAdapter(activityContext, null);
         binding.donorsRecyclerView.setAdapter(donorsAdapter);
+
+        // clicking the ask for help button
+        donorsAdapter.SetOnItemClickListener((v, position, obj) -> {
+            Log.e("position", ((RowItem) obj).getUsers().getName());
+        });
     }
 
     private void groupDataIntoHashMap(List<Users> usersList) {

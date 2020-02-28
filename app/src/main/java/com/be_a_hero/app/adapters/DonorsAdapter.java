@@ -75,8 +75,7 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder,
-                                 int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         switch (holder.getItemViewType()) {
             case UsersListItem.TYPE_HEADER:
@@ -95,6 +94,14 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 rViewHolder.binding.userImageView.setImageResource(rowItem.getUsers().getImage());
                 rViewHolder.binding.userLocationTextView.setText(rowItem.getUsers().getLocation());
                 rViewHolder.binding.bloodGroupTextView.setText(rowItem.getUsers().getBloodGroup());
+
+                // click listeners
+                rViewHolder.binding.buttonAskForHelp.setOnClickListener(view -> {
+                    if (mOnItemClickListener != null) {
+                        mOnItemClickListener.onItemClick(view, position, rowItem);
+                    }
+                });
+
                 break;
         }
 
