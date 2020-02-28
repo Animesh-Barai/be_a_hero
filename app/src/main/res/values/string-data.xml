@@ -106,24 +106,24 @@
     <string-array name="post_dates" tools:ignore="TypographyDashes">
         <item>2019-11-12</item>
         <item>2020-01-01</item>
-        <item>2020-12-28</item>
+        <item>2019-12-28</item>
         <item>2020-02-18</item>
+        <item>2020-02-27</item>
+        <item>2020-02-28</item>
         <item>2020-02-21</item>
         <item>2020-01-19</item>
         <item>2019-21-12</item>
-        <item>2020-02-25</item>
-        <item>2020-02-24</item>
     </string-array>
 
     <string-array name="last_donation_dates" tools:ignore="TypographyDashes">
-        <item>2020-02-25</item>
-        <item>2020-02-25</item>
+        <item>2019-12-25</item>
+        <item>2019-12-25</item>
         <item>2020-01-25</item>
         <item>2020-02-25</item>
         <item>2020-02-25</item>
         <item>2020-02-25</item>
-        <item>2020-02-25</item>
-        <item>2020-02-25</item>
+        <item>2020-02-28</item>
+        <item>2020-02-28</item>
     </string-array>
 
 </resources>

@@ -6,7 +6,7 @@ import com.be_a_hero.app.databinding.ItemDonorsHeaderBinding;
 
 public class HeaderViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemDonorsHeaderBinding binding;
+    public ItemDonorsHeaderBinding binding;
 
     public HeaderViewHolder(final ItemDonorsHeaderBinding itemBinding) {
         super(itemBinding.getRoot());

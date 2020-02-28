@@ -17,6 +17,7 @@ import com.be_a_hero.app.R;
 import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ItemPostBinding;
 import com.be_a_hero.app.models.Posts;
+import com.be_a_hero.app.utils.DateTimeUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -73,7 +74,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         final Posts obj = filtered_items.get(position);
 
         // set the views
-
         holder.binding.userNameTextView.setText(obj.getUser().getName());
         holder.binding.userImageView.setImageResource(obj.getUser().getImage());
         holder.binding.postImageView.setImageResource(obj.getPostImage());
@@ -84,11 +84,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         try {
             Date datePostCreated = dateFormat.parse(obj.getTimeAgo());
-            long milliseconds = datePostCreated.getTime();
-            holder.binding.postTimeTextView.setText(Constants.timeAgoTimeDiff(milliseconds));
+            holder.binding.postTimeTextView.setText(DateTimeUtils.timeAgoTimeDiff(datePostCreated));
         } catch (ParseException e) {
-            e.printStackTrace();
             holder.binding.postTimeTextView.setText(obj.getTimeAgo());
+            e.printStackTrace();
         }
 
         // to show and hide the various layouts

@@ -30,7 +30,7 @@ public class Constants {
         String[] dates_arr = ctx.getResources().getStringArray(R.array.last_donation_dates);
 
         for (int i = 0; i < names_arr.length ; i++) {
-            Users item = new Users(i+1,names_arr[i], imgs_arr.getResourceId(i, -1), getRandomValue(ctx, locations_arr), "+91 "+String.valueOf(getRandomIndex(rnd,731234567,732234567)), blood_groups_arr[i], getRandomValue(ctx, dates_arr));
+            Users item = new Users(i+1,names_arr[i], imgs_arr.getResourceId(i, -1), getRandomValue(ctx, locations_arr), "+91 "+String.valueOf(getRandomIndex(rnd,731234567,732234567)), blood_groups_arr[i], dates_arr[i]);
             items.add(item);
         }
         Collections.shuffle(items, rnd);
@@ -48,7 +48,7 @@ public class Constants {
         TypedArray imgs_arr = ctx.getResources().obtainTypedArray(R.array.post_images);
 
         for (int i = 0; i < content_arr.length ; i++) {
-            Posts item = new Posts(i+1, users_arr.get(i), getRandomValue(ctx, time_arr), content_arr[i], imgs_arr.getResourceId(i, -1));
+            Posts item = new Posts(i+1, users_arr.get(i), time_arr[i], content_arr[i], imgs_arr.getResourceId(i, -1));
             items.add(item);
         }
         Collections.shuffle(items, rnd);
@@ -61,34 +61,5 @@ public class Constants {
 
     private static String getRandomValue(Context ctx, String[] parsed_arr) {
         return parsed_arr[getRandomIndex(rnd, 0, parsed_arr.length - 1)];
-    }
-
-    // calculate time ago from given date
-    public static String timeAgoTimeDiff(long parsedDate) {
-
-        long timeDifferenceMilliseconds  = new Date(parsedDate).getTime() - new Date().getTime();
-
-        long diffSeconds = timeDifferenceMilliseconds / 1000;
-        long diffMinutes = timeDifferenceMilliseconds / (60 * 1000);
-        long diffHours = timeDifferenceMilliseconds / (60 * 60 * 1000);
-        long diffDays = timeDifferenceMilliseconds / (60 * 60 * 1000 * 24);
-        long diffWeeks = timeDifferenceMilliseconds / (60 * 60 * 1000 * 24 * 7);
-        long diffMonths = (long) (timeDifferenceMilliseconds / (60 * 60 * 1000 * 24 * 30.41666666));
-        long diffYears = timeDifferenceMilliseconds / ((long)60 * 60 * 1000 * 24 * 365);
-
-        if (diffSeconds < 1) {
-            return "1 second";
-        }else if (diffMinutes < 1) {
-            return diffSeconds + " Seconds";
-        }//Minutes
-        else if (diffMinutes <= 60) {
-            if (diffMinutes == 1) {
-                return "1 Minute";
-            } else {
-                return diffMinutes + " Minutes";
-            }
-        }else{
-            return DateFormat.format("dd-MMM-yyyy", new Date(parsedDate)).toString();
-        }
     }
 }
