@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
     \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
     <string name="short_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
@@ -103,27 +103,27 @@
     </string-array>
 
     <!--dates-->
-    <string-array name="post_dates">
-        <item>12 Nov, 2019</item>
-        <item>01 Jan, 2020</item>
-        <item>28 Dec, 2020</item>
-        <item>18 Feb, 2020</item>
-        <item>21 Feb, 2020</item>
-        <item>19 Jan, 2020</item>
-        <item>21 Dec, 2019</item>
-        <item>25 Feb, 2020</item>
-        <item>24 Feb, 2020</item>
+    <string-array name="post_dates" tools:ignore="TypographyDashes">
+        <item>2019-11-12</item>
+        <item>2020-01-01</item>
+        <item>2020-12-28</item>
+        <item>2020-02-18</item>
+        <item>2020-02-21</item>
+        <item>2020-01-19</item>
+        <item>2019-21-12</item>
+        <item>2020-02-25</item>
+        <item>2020-02-24</item>
     </string-array>
 
-    <string-array name="last_donation_dates">
-        <item>20 Nov, 2019</item>
-        <item>08 Feb, 2020</item>
-        <item>01 Jan, 2020</item>
-        <item>08 Feb, 2020</item>
-        <item>01 Jan, 2020</item>
-        <item>08 Feb, 2020</item>
-        <item>01 Jan, 2020</item>
-        <item>08 Feb, 2020</item>
+    <string-array name="last_donation_dates" tools:ignore="TypographyDashes">
+        <item>2020-02-25</item>
+        <item>2020-02-25</item>
+        <item>2020-01-25</item>
+        <item>2020-02-25</item>
+        <item>2020-02-25</item>
+        <item>2020-02-25</item>
+        <item>2020-02-25</item>
+        <item>2020-02-25</item>
     </string-array>
 
 </resources>

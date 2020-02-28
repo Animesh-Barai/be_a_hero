@@ -12,6 +12,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.be_a_hero.app.R;
+import com.be_a_hero.app.adapters.viewholders.HeaderViewHolder;
+import com.be_a_hero.app.adapters.viewholders.RowViewHolder;
 import com.be_a_hero.app.databinding.ItemDonorsHeaderBinding;
 import com.be_a_hero.app.databinding.ItemDonorsRowBinding;
 import com.be_a_hero.app.models.UsersListItem;
@@ -34,22 +36,6 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.mOnItemClickListener = mItemClickListener;
     }
 
-    class HeaderViewHolder extends ViewHolder {
-        ItemDonorsHeaderBinding binding;
-        HeaderViewHolder(final ItemDonorsHeaderBinding itemBinding) {
-            super(itemBinding.getRoot());
-            this.binding = itemBinding;
-        }
-    }
-
-    class RowViewHolder extends ViewHolder {
-        ItemDonorsRowBinding binding;
-        RowViewHolder(final ItemDonorsRowBinding itemBinding) {
-            super(itemBinding.getRoot());
-            this.binding = itemBinding;
-        }
-    }
-
     // Provide a suitable constructor (depends on the kind of dataset)
     public DonorsAdapter(Context ctx, List<UsersListItem> items) {
         this.ctx = ctx;
@@ -70,11 +56,11 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         switch (viewType) {
             case UsersListItem.TYPE_HEADER:
                 ItemDonorsHeaderBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_donors_header, parent, false);
-                viewHolder = new DonorsAdapter.HeaderViewHolder(binding);
+                viewHolder = new HeaderViewHolder(binding);
                 break;
             case UsersListItem.TYPE_ROW:
                 ItemDonorsRowBinding rowBinding = DataBindingUtil.inflate(layoutInflater, R.layout.item_donors_row, parent, false);
-                viewHolder = new DonorsAdapter.RowViewHolder(rowBinding);
+                viewHolder = new RowViewHolder(rowBinding);
                 break;
         }
 
@@ -89,23 +75,11 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         switch (holder.getItemViewType()) {
 
             case UsersListItem.TYPE_HEADER:
-//                GeneralItem generalItem
-//                        = (GeneralItem) consolidatedList.get(position);
-//                GeneralViewHolder generalViewHolder
-//                        = (GeneralViewHolder) viewHolder;
-
-                // Populate general item data here
-
-                break;
-
-            case UsersListItem.TYPE_ROW:
-//                DateItem dateItem
-//                        = (DateItem) consolidatedList.get(position);
-//                DateViewHolder dateViewHolder
-//                        = (DateViewHolder) viewHolder;
-
                 // Populate date item data here
 
+                break;
+            case UsersListItem.TYPE_ROW:
+                // Populate date item data here
                 break;
         }
 

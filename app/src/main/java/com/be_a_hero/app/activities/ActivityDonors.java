@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,8 +23,11 @@ import com.be_a_hero.app.models.UsersListItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class ActivityDonors extends BaseActivity {
 
@@ -65,20 +69,19 @@ public class ActivityDonors extends BaseActivity {
 
     private void groupDataIntoHashMap(List<Users> usersList) {
 
-        HashMap<String, List<Users>> groupedHashMap = new HashMap<>();
+        LinkedHashMap<String, Set<Users>> groupedHashMap = new LinkedHashMap<>();
 
-        for(Users userModel : usersList) {
-
-            String hashMapKey = userModel.getLastDonatedDate();
-
-            if(groupedHashMap.containsKey(hashMapKey)) {
+        Set<Users> list = null;
+        for (Users userObj : usersList) {
+            String hashMapKey = userObj.getLastDonatedDate();
+            if (groupedHashMap.containsKey(hashMapKey)) {
                 // The key is already in the HashMap; add the pojo object
                 // against the existing key.
-                Objects.requireNonNull(groupedHashMap.get(hashMapKey)).add(userModel);
+                Objects.requireNonNull(groupedHashMap.get(hashMapKey)).add(userObj);
             } else {
                 // The key is not there in the HashMap; create a new key-value pair
-                List<Users> list = new ArrayList<>();
-                list.add(userModel);
+                list = new LinkedHashSet<>();
+                list.add(userObj);
                 groupedHashMap.put(hashMapKey, list);
             }
         }
@@ -87,7 +90,7 @@ public class ActivityDonors extends BaseActivity {
         generateListFromMap(groupedHashMap);
     }
 
-    private void generateListFromMap(HashMap<String, List<Users>> groupedHashMap) {
+    private void generateListFromMap(LinkedHashMap<String, Set<Users>> groupedHashMap) {
         // We linearly add every item into the consolidatedList.
         List<UsersListItem> consolidatedList = new ArrayList<>();
         for (String date : groupedHashMap.keySet()) {

@@ -81,11 +81,11 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         holder.binding.userLocationTextView.setText(obj.getUser().getLocation());
 
         // show the time ago
-        SimpleDateFormat format = new SimpleDateFormat("dd MMM, yyyy", Locale.getDefault());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         try {
-            Date datePostCreated = format.parse(obj.getTimeAgo());
-            Log.e("datePostCreated",datePostCreated.toString());
-            holder.binding.postTimeTextView.setText(Constants.timeAgoTimeDiff(datePostCreated,new Date()));
+            Date datePostCreated = dateFormat.parse(obj.getTimeAgo());
+            long milliseconds = datePostCreated.getTime();
+            holder.binding.postTimeTextView.setText(Constants.timeAgoTimeDiff(milliseconds));
         } catch (ParseException e) {
             e.printStackTrace();
             holder.binding.postTimeTextView.setText(obj.getTimeAgo());

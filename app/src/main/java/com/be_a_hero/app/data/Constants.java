@@ -64,9 +64,9 @@ public class Constants {
     }
 
     // calculate time ago from given date
-    public static String timeAgoTimeDiff(Date startDate, Date endDate) {
+    public static String timeAgoTimeDiff(long parsedDate) {
 
-        long timeDifferenceMilliseconds = endDate.getTime() - startDate.getTime();
+        long timeDifferenceMilliseconds  = new Date(parsedDate).getTime() - new Date().getTime();
 
         long diffSeconds = timeDifferenceMilliseconds / 1000;
         long diffMinutes = timeDifferenceMilliseconds / (60 * 1000);
@@ -88,7 +88,7 @@ public class Constants {
                 return diffMinutes + " Minutes";
             }
         }else{
-            return DateFormat.format("dd-MMM-yyyy", new Date(endDate.getTime())).toString();
+            return DateFormat.format("dd-MMM-yyyy", new Date(parsedDate)).toString();
         }
     }
 }
