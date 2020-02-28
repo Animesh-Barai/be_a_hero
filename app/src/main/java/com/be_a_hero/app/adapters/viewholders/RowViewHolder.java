@@ -6,7 +6,7 @@ import com.be_a_hero.app.databinding.ItemDonorsRowBinding;
 
 public class RowViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemDonorsRowBinding binding;
+    public ItemDonorsRowBinding binding;
 
     public RowViewHolder(final ItemDonorsRowBinding itemBinding) {
         super(itemBinding.getRoot());

@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.be_a_hero.app.adapters.viewholders.RowViewHolder;
 import com.be_a_hero.app.databinding.ItemDonorsHeaderBinding;
 import com.be_a_hero.app.databinding.ItemDonorsRowBinding;
 import com.be_a_hero.app.models.HeaderItem;
+import com.be_a_hero.app.models.RowItem;
 import com.be_a_hero.app.models.UsersListItem;
 import com.be_a_hero.app.utils.DateTimeUtils;
 
@@ -77,21 +79,22 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                                  int position) {
 
         switch (holder.getItemViewType()) {
-
             case UsersListItem.TYPE_HEADER:
                 HeaderItem headerItem = (HeaderItem) filtered_items.get(position);
                 HeaderViewHolder hViewHolder = (HeaderViewHolder)(holder);
 
                 // Populate date item data here
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
-
-
                 String dateString = DateTimeUtils.parseDateTime(headerItem.getDate(), "yyyy-MM-dd", "dd MMM yyyy");
                 hViewHolder.binding.donationDateTextView.setText(ctx.getString(R.string.last_donation_date, dateString));
-
                 break;
             case UsersListItem.TYPE_ROW:
+                RowItem rowItem = (RowItem) filtered_items.get(position);
+                RowViewHolder rViewHolder = (RowViewHolder)(holder);
                 // Populate date item data here
+                rViewHolder.binding.userNameTextView.setText(rowItem.getUsers().getName());
+                rViewHolder.binding.userImageView.setImageResource(rowItem.getUsers().getImage());
+                rViewHolder.binding.userLocationTextView.setText(rowItem.getUsers().getLocation());
+                rViewHolder.binding.bloodGroupTextView.setText(rowItem.getUsers().getBloodGroup());
                 break;
         }
 
