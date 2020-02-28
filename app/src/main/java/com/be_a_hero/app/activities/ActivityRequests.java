@@ -7,27 +7,16 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.adapters.DonorsAdapter;
+import com.be_a_hero.app.adapters.PostsAdapter;
+import com.be_a_hero.app.adapters.RequestsAdapter;
 import com.be_a_hero.app.data.Constants;
-import com.be_a_hero.app.databinding.ActivityDonorsBinding;
 import com.be_a_hero.app.databinding.ActivityRequestsBinding;
-import com.be_a_hero.app.models.HeaderItem;
-import com.be_a_hero.app.models.RowItem;
-import com.be_a_hero.app.models.Users;
-import com.be_a_hero.app.models.UsersListItem;
-
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 
 public class ActivityRequests extends BaseActivity {
 
@@ -37,7 +26,7 @@ public class ActivityRequests extends BaseActivity {
 
     private View parent_view;
 
-    private DonorsAdapter donorsAdapter;
+    private RequestsAdapter requestsAdapter;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, ActivityRequests.class);
@@ -53,6 +42,18 @@ public class ActivityRequests extends BaseActivity {
         parent_view = findViewById(android.R.id.content);
 
         initToolbar(binding.requestsToolbar.toolbar,true);
+
+        bindRecyclerView();
+    }
+
+    private void bindRecyclerView() {
+        // show the users
+        binding.usersRecyclerView.setLayoutManager(new LinearLayoutManager(activityContext));
+        binding.usersRecyclerView.setHasFixedSize(true);
+        binding.usersRecyclerView.setNestedScrollingEnabled(false);
+        //set data and list adapter
+        requestsAdapter = new RequestsAdapter(activityContext, Constants.getUsers(activityContext));
+        binding.usersRecyclerView.setAdapter(requestsAdapter);
     }
 
     @Override

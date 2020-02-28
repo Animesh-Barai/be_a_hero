@@ -44,7 +44,7 @@
             android:paddingRight="@dimen/spacing_mlarge"
             android:paddingBottom="@dimen/spacing_middle"
             android:layout_marginBottom="@dimen/spacing_mlarge"
-            android:background="@drawable/rect_white_stroke_left_arc"/>
+            android:background="@drawable/rect_white_stroke_left_rounded_corners"/>
 
     </RelativeLayout>
 

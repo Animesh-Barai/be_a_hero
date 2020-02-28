@@ -82,12 +82,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/RippleStyleBlack"
-                android:layout_below="@+id/location_layout"
+                android:layout_alignParentBottom="true"
                 android:layout_marginEnd="@dimen/spacing_mmiddle"
                 android:layout_marginRight="@dimen/spacing_mmiddle">
 
                 <TextView
-                    android:id="@+id/button_ask_for_help"
+                    android:id="@+id/ask_for_help_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"

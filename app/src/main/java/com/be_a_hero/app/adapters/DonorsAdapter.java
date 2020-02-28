@@ -5,7 +5,6 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +21,7 @@ import com.be_a_hero.app.models.RowItem;
 import com.be_a_hero.app.models.UsersListItem;
 import com.be_a_hero.app.utils.DateTimeUtils;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -96,7 +93,7 @@ public class DonorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 rViewHolder.binding.bloodGroupTextView.setText(rowItem.getUsers().getBloodGroup());
 
                 // click listeners
-                rViewHolder.binding.buttonAskForHelp.setOnClickListener(view -> {
+                rViewHolder.binding.askForHelpTextView.setOnClickListener(view -> {
                     if (mOnItemClickListener != null) {
                         mOnItemClickListener.onItemClick(view, position, rowItem);
                     }
