@@ -1,7 +1,6 @@
 package com.be_a_hero.app.utils;
 
 import android.text.format.DateFormat;
-import android.text.format.DateUtils;
 import android.util.Log;
 
 import java.text.ParseException;

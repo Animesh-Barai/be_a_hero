@@ -6,7 +6,6 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ItemPostBinding;
 import com.be_a_hero.app.models.Posts;
 import com.be_a_hero.app.utils.DateTimeUtils;

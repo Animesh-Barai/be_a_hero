@@ -3,7 +3,6 @@ package com.be_a_hero.app.data;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.format.DateFormat;
 
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.models.Posts;
@@ -11,7 +10,6 @@ import com.be_a_hero.app.models.Users;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 

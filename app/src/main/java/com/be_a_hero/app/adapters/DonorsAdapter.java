@@ -14,16 +14,13 @@ import android.view.animation.AnimationUtils;
 import com.be_a_hero.app.R;
 import com.be_a_hero.app.adapters.viewholders.HeaderViewHolder;
 import com.be_a_hero.app.adapters.viewholders.RowViewHolder;
-import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ItemDonorsHeaderBinding;
 import com.be_a_hero.app.databinding.ItemDonorsRowBinding;
 import com.be_a_hero.app.models.HeaderItem;
 import com.be_a_hero.app.models.UsersListItem;
 import com.be_a_hero.app.utils.DateTimeUtils;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
