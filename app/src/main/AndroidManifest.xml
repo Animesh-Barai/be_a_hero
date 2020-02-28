@@ -74,6 +74,10 @@
             android:theme="@style/AppTheme.WhiteStatusBar"
             android:windowSoftInputMode="stateHidden"/>
 
+        <activity
+            android:name=".activities.ActivityRequests"
+            android:windowSoftInputMode="stateHidden"/>
+
     </application>
 
 </manifest>

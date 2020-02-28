@@ -144,7 +144,7 @@
                     android:layout_marginStart="@dimen/spacing_mmiddle">
 
                     <Button
-                        android:id="@+id/button_view_totals"
+                        android:id="@+id/button_view_requests"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
