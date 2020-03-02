@@ -61,7 +61,9 @@ public class ActivityUserProfile extends BaseActivity {
 
     private void initViews() {
         binding.usernameTextView.setText(parsedUserObj.getName());
-        binding.userImageView.setImageResource(parsedUserObj.getImage());
+        binding.userContentTop.userImageView.setImageResource(parsedUserObj.getImage());
+        binding.userContentTop.userLocationTextView.setText(parsedUserObj.getLocation());
+        binding.userContentTop.userDescriptionTextView.setText(activityContext.getString(R.string.medium_lorem_ipsum));
     }
 
     private void bindRecyclerView() {
