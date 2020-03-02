@@ -7,13 +7,12 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.adapters.DonorsAdapter;
-import com.be_a_hero.app.adapters.PostsAdapter;
 import com.be_a_hero.app.adapters.RequestsAdapter;
 import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ActivityRequestsBinding;
@@ -54,6 +53,11 @@ public class ActivityRequests extends BaseActivity {
         //set data and list adapter
         requestsAdapter = new RequestsAdapter(activityContext, Constants.getUsers(activityContext));
         binding.usersRecyclerView.setAdapter(requestsAdapter);
+
+        // clicking the requests list
+        requestsAdapter.SetOnItemClickListener((v, position, obj) -> {
+            Log.e("position", obj.getName());
+        });
     }
 
     @Override

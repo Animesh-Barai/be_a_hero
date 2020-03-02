@@ -12,7 +12,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.databinding.ItemPostBinding;
 import com.be_a_hero.app.databinding.ItemRequestsBinding;
 import com.be_a_hero.app.models.Users;
 
@@ -74,11 +73,11 @@ public class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHo
         holder.binding.bloodGroupTextView.setText(obj.getBloodGroup());
 
         // click listeners
-//        holder.binding.lytParent.setOnClickListener(view -> {
-//            if (mOnItemClickListener != null) {
-//                mOnItemClickListener.onItemClick(view, position, obj);
-//            }
-//        });
+        holder.binding.lytParent.setOnClickListener(view -> {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(view, position, obj);
+            }
+        });
 
         // Here you apply the animation when the view is bound
         setAnimation(holder.itemView, position);
