@@ -7,7 +7,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,7 +55,7 @@ public class ActivityRequests extends BaseActivity {
 
         // clicking the requests list
         requestsAdapter.SetOnItemClickListener((v, position, obj) -> {
-            Log.e("position", obj.getName());
+            ActivityUserProfile.start(activityContext);
         });
     }
 
@@ -78,7 +77,7 @@ public class ActivityRequests extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_donors, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_requests, menu);
         return true;
     }
 }

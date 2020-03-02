@@ -11,11 +11,11 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
             android:layout_alignParentTop="true"
             app:theme="@style/DarkArrowToolbarStyle"
             app:titleTextColor="@color/be_hero_dark"
-            android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         <android.support.v7.widget.RecyclerView
