@@ -16,8 +16,6 @@ import com.be_a_hero.app.databinding.ActivityUserProfileBinding;
 import com.be_a_hero.app.models.Posts;
 import com.be_a_hero.app.models.Users;
 
-import java.io.Serializable;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 

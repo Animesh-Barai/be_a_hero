@@ -155,10 +155,11 @@
             android:layout_marginTop="@dimen/spacing_middle" />
 
         <!--Actions layout-->
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/actions_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/spacing_large"
             android:paddingRight="@dimen/spacing_large"
             android:layout_marginTop="@dimen/spacing_middle"
@@ -169,16 +170,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/RippleStyleBlack"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginEnd="@dimen/spacing_large"
-                android:layout_marginRight="@dimen/spacing_large">
+                android:layout_marginEnd="@dimen/spacing_middle"
+                android:layout_marginRight="@dimen/spacing_middle">
 
                 <ImageView
                     android:id="@+id/action_like_image_view"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
+                    android:tag="liked"
                     android:tint="@color/colorAccent"
                     android:padding="@dimen/spacing_mmiddle"
                     app:srcCompat="@drawable/ic_heart_filled"
@@ -191,11 +190,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/RippleStyleBlack"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/spacing_large"
-                android:layout_marginRight="@dimen/spacing_large"
-                android:layout_toEndOf="@+id/action_like_ripple"
-                android:layout_toRightOf="@+id/action_like_ripple">
+                android:layout_marginEnd="@dimen/spacing_middle"
+                android:layout_marginRight="@dimen/spacing_middle">
 
                 <ImageView
                     android:id="@+id/action_share_image_view"
@@ -212,10 +208,7 @@
                 android:id="@+id/action_comment_ripple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/RippleStyleBlack"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/action_share_ripple"
-                android:layout_toRightOf="@+id/action_share_ripple">
+                style="@style/RippleStyleBlack">
 
                 <ImageView
                     android:id="@+id/action_comment_image_view"
@@ -228,7 +221,7 @@
 
             </com.be_a_hero.app.widget.MaterialRippleLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 

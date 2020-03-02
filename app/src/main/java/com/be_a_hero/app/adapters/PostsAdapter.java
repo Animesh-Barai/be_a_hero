@@ -106,7 +106,17 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         setAnimation(holder.itemView, position);
 
         // click listeners
-        holder.binding.lytParent.setOnClickListener(view -> {
+        holder.binding.actionLikeImageView.setOnClickListener(view -> {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(view, position, obj);
+            }
+        });
+        holder.binding.actionShareImageView.setOnClickListener(view -> {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(view, position, obj);
+            }
+        });
+        holder.binding.actionCommentImageView.setOnClickListener(view -> {
             if (mOnItemClickListener != null) {
                 mOnItemClickListener.onItemClick(view, position, obj);
             }
