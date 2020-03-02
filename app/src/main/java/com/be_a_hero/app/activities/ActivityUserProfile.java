@@ -4,12 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.be_a_hero.app.R;
+import com.be_a_hero.app.adapters.DonorsAdapter;
+import com.be_a_hero.app.adapters.PostsAdapter;
+import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ActivityUserProfileBinding;
+import com.be_a_hero.app.models.Posts;
+import com.be_a_hero.app.models.RowItem;
+import com.be_a_hero.app.models.UsersListItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityUserProfile extends BaseActivity {
 
@@ -18,6 +29,7 @@ public class ActivityUserProfile extends BaseActivity {
     ActivityUserProfileBinding binding;
 
     private View parent_view;
+    private PostsAdapter postsAdapter;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, ActivityUserProfile.class);
@@ -37,12 +49,30 @@ public class ActivityUserProfile extends BaseActivity {
     }
 
     private void bindRecyclerView() {
-
+        // show the list of recent activity
+        binding.recentActivityRecyclerView.setLayoutManager(new LinearLayoutManager(activityContext));
+        binding.recentActivityRecyclerView.setHasFixedSize(true);
+        binding.recentActivityRecyclerView.setNestedScrollingEnabled(false);
+        //set data and list adapter
+        postsAdapter = new PostsAdapter(activityContext, null);
+        binding.recentActivityRecyclerView.setAdapter(postsAdapter);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        generateListForRecentActivity(Constants.getPosts(activityContext));
+    }
+
+    private void generateListForRecentActivity(List<Posts> posts) {
+        // Create new list of posts
+        // add the first and last item
+        List<Posts> newPostsList = new ArrayList<>();
+        newPostsList.add(posts.get(0));
+        newPostsList.add(posts.get((posts.size()-1)));
+
+        // refresh the adapter
+        postsAdapter.setPostsList(newPostsList);
     }
 
     @Override
