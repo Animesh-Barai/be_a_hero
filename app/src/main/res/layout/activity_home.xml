@@ -109,8 +109,8 @@
                         layout="@layout/home_content_top"
                         android:layout_marginTop="@dimen/spacing_large"
                         android:layout_marginBottom="@dimen/spacing_large"
-                        android:layout_marginLeft="@dimen/spacing_mmiddle"
-                        android:layout_marginRight="@dimen/spacing_mmiddle"/>
+                        android:layout_marginLeft="@dimen/spacing_middle"
+                        android:layout_marginRight="@dimen/spacing_middle"/>
 
                 </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -120,7 +120,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:orientation="horizontal"
                     layout="@layout/home_content_title"/>
 
             </android.support.design.widget.AppBarLayout>

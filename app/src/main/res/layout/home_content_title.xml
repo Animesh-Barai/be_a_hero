@@ -12,8 +12,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/spacing_middle"
-            android:background="@android:color/white">
+            android:background="@android:color/white"
+            android:paddingLeft="@dimen/spacing_large"
+            android:paddingTop="@dimen/spacing_mmiddle"
+            android:paddingRight="@dimen/spacing_large"
+            android:paddingBottom="@dimen/spacing_mmiddle">
 
             <TextView
                 android:id="@+id/explore_text_view"
