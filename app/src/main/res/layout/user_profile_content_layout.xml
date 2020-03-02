@@ -228,7 +228,7 @@
                     android:textSize="16sp"
                     android:text="Location"
                     app:fontFamily="@fonts/montserrat_light"
-                    android:textColor="@color/be_hero_dark"
+                    android:textColor="@color/finestTextColor"
                     android:layout_toEndOf="@+id/user_location_image_view"
                     android:layout_toRightOf="@+id/user_location_image_view"/>
 
