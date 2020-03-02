@@ -60,4 +60,7 @@ public class Constants {
     private static String getRandomValue(Context ctx, String[] parsed_arr) {
         return parsed_arr[getRandomIndex(rnd, 0, parsed_arr.length - 1)];
     }
+
+    // pass the case object clicked
+    public static final String USER_EXTRA_OBJECT = "com.be_a_hero.app.models.Users";
 }

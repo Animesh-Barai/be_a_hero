@@ -5,20 +5,19 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.be_a_hero.app.R;
-import com.be_a_hero.app.adapters.DonorsAdapter;
 import com.be_a_hero.app.adapters.PostsAdapter;
 import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ActivityUserProfileBinding;
 import com.be_a_hero.app.models.Posts;
-import com.be_a_hero.app.models.RowItem;
-import com.be_a_hero.app.models.UsersListItem;
+import com.be_a_hero.app.models.Users;
 
+import java.io.Serializable;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,9 +29,11 @@ public class ActivityUserProfile extends BaseActivity {
 
     private View parent_view;
     private PostsAdapter postsAdapter;
+    private Users parsedUserObj;
 
-    public static void start(Context context) {
+    public static void start(Context context, Users obj) {
         Intent intent = new Intent(context, ActivityUserProfile.class);
+        intent.putExtra(Constants.USER_EXTRA_OBJECT, obj);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         context.startActivity(intent);
     }
@@ -43,9 +44,24 @@ public class ActivityUserProfile extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_profile);
         parent_view = findViewById(android.R.id.content);
 
+        // deserialize object from string to object class.
+        parsedUserObj = (Users) getIntent().getSerializableExtra(Constants.USER_EXTRA_OBJECT);
+
+        if (parsedUserObj == null) {
+            finish();
+        }
+
         initToolbar(binding.toolbar,true);
 
+        // show the data in the views
+        initViews();
+
         bindRecyclerView();
+    }
+
+    private void initViews() {
+        binding.usernameTextView.setText(parsedUserObj.getName());
+        binding.userImageView.setImageResource(parsedUserObj.getImage());
     }
 
     private void bindRecyclerView() {
@@ -58,21 +74,26 @@ public class ActivityUserProfile extends BaseActivity {
         binding.recentActivityRecyclerView.setAdapter(postsAdapter);
     }
 
+    private void generateListForRecentActivity(List<Posts> posts) {
+        // Create new list of posts
+        // by filtering the post related to this user
+        List<Posts> newPostsList = new ArrayList<>();
+
+        for (Posts posts1:posts) {
+            String str_user_id = String.valueOf(posts1.getUser().getId());
+            if (str_user_id.toLowerCase().equalsIgnoreCase(String.valueOf(parsedUserObj.getId()))) {
+                newPostsList.add(posts1);
+            }
+        }
+
+        // refresh the adapter
+        postsAdapter.setPostsList(newPostsList);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
         generateListForRecentActivity(Constants.getPosts(activityContext));
-    }
-
-    private void generateListForRecentActivity(List<Posts> posts) {
-        // Create new list of posts
-        // add the first and last item
-        List<Posts> newPostsList = new ArrayList<>();
-        newPostsList.add(posts.get(0));
-        newPostsList.add(posts.get((posts.size()-1)));
-
-        // refresh the adapter
-        postsAdapter.setPostsList(newPostsList);
     }
 
     @Override

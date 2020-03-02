@@ -15,6 +15,9 @@ import com.be_a_hero.app.R;
 import com.be_a_hero.app.adapters.RequestsAdapter;
 import com.be_a_hero.app.data.Constants;
 import com.be_a_hero.app.databinding.ActivityRequestsBinding;
+import com.be_a_hero.app.models.Users;
+
+import java.lang.reflect.Type;
 
 public class ActivityRequests extends BaseActivity {
 
@@ -55,7 +58,7 @@ public class ActivityRequests extends BaseActivity {
 
         // clicking the requests list
         requestsAdapter.SetOnItemClickListener((v, position, obj) -> {
-            ActivityUserProfile.start(activityContext);
+            ActivityUserProfile.start(activityContext,obj);
         });
     }
 

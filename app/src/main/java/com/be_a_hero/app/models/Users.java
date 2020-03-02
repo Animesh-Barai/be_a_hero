@@ -1,6 +1,9 @@
 package com.be_a_hero.app.models;
 
-public class Users {
+import java.io.Serializable;
+
+@SuppressWarnings("serial") //With this annotation we are going to hide compiler warnings
+public class Users implements Serializable {
     private int id;
     private String name;
     private int image;
